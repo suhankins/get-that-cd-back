@@ -39,12 +39,12 @@ _subresources={
 "use_external/path": "uid://d1astxq58fpy1"
 },
 "dkred": {
-"use_external/enabled": false,
-"use_external/path": "uid://p3rldtoewrh8"
+"use_external/enabled": true,
+"use_external/path": "uid://dwyob0sbscmp2"
 },
 "ltgrey": {
 "use_external/enabled": true,
-"use_external/path": "uid://bm0vx6katookv"
+"use_external/path": "uid://bj4o3005kga8p"
 }
 },
 "nodes": {
