@@ -36,6 +36,7 @@ const THROW_TIME_TO_HIT: float = 1.7
 @export var hurt_sounds: Array[AudioStream]
 @export var dying_sounds: Array[AudioStream]
 
+var seen_player = false
 var state: STATE = STATE.UNALERTED
 enum STATE {
 	UNALERTED,
@@ -56,9 +57,10 @@ func _process(delta: float) -> void:
 		return
 	if (state == STATE.UNALERTED):
 		if (_sees_player()):
-			if (randf() > 0.5):
+			if (!seen_player):
 				audio_player.stream = spotted_sounds.pick_random()
 				audio_player.play()
+				seen_player = true
 			animation_player.play("idle")
 			state = STATE.IDLE
 			time_to_change_state_timer.start(0.5)
