@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cb1et1f1pg7us"]
+
+[ext_resource type="Texture2D" uid="uid://dg0k3rkj1uss1" path="res://models/Textures/Finishes.Masonry Flooring.Granite.Brown-Black.jpg" id="1_rc2rj"]
+
+[resource]
+albedo_texture = ExtResource("1_rc2rj")

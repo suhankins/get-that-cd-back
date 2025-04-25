@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dkkxu1ev3n2k7"]
+
+[ext_resource type="Texture2D" uid="uid://c4u0ne4dcj1ph" path="res://models/Textures/Masonry.Stone.Slate.jpg" id="1_kyvc0"]
+
+[resource]
+albedo_texture = ExtResource("1_kyvc0")

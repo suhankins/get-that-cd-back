@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://67mg5h0hvh56"]
+
+[ext_resource type="Texture2D" uid="uid://15is543gufx1" path="res://sprites/aic_glow.png" id="1_j0223"]
+[ext_resource type="Texture2D" uid="uid://c375fempgm7kv" path="res://sprites/ray.png" id="2_75m87"]
+
+[node name="LobbyLight" type="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 10.831
+shadow_enabled = true
+spot_range = 34.1652
+spot_angle = 37.8365
+
+[node name="Spot" type="Sprite3D" parent="."]
+pixel_size = 0.05
+texture = ExtResource("1_j0223")
+
+[node name="GodRay" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.76837e-07, -8.94675)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_75m87")
