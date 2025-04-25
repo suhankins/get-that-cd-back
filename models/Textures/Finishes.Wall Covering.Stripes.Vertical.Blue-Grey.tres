@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0uhn8icob28o"]
+
+[ext_resource type="Texture2D" uid="uid://b84ph7ufxfl30" path="res://models/Textures/Finishes.Wall Covering.Stripes.Vertical.Blue-Grey.jpg" id="1_t4dea"]
+
+[resource]
+albedo_texture = ExtResource("1_t4dea")
+metallic_specular = 0.1

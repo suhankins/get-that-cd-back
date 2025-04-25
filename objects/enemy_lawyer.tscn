@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0t7akkvlb8s5"]
+
+[ext_resource type="PackedScene" uid="uid://bagk1is8oydy" path="res://objects/lawyer.tscn" id="1_lfs21"]
+[ext_resource type="Script" uid="uid://d2tpntvbvoon4" path="res://scripts/enemy_lawyer.gd" id="1_ysn01"]
+[ext_resource type="Material" uid="uid://gyk4bdd0xr63" path="res://models/Textures/opencoatAGNET.bmp.tres" id="2_i4wis"]
+[ext_resource type="Material" uid="uid://clus7ns7kc2ya" path="res://models/Textures/blueagent.tres" id="3_gm3pk"]
+[ext_resource type="PackedScene" uid="uid://76doqois33s" path="res://objects/legal_paper_projectile.tscn" id="4_gm3pk"]
+[ext_resource type="AudioStream" uid="uid://bhhp12ptb6g4x" path="res://sounds/swish_punch.mp3" id="5_0dht6"]
+[ext_resource type="AudioStream" uid="uid://1tgmth4r4k8k" path="res://sounds/enemy_lines/catch_this.wav" id="6_kaiu8"]
+[ext_resource type="AudioStream" uid="uid://7shasfy4b5fi" path="res://sounds/enemy_lines/show_me_what_you_got.wav" id="6_rb0b3"]
+[ext_resource type="AudioStream" uid="uid://uhl5kybrus08" path="res://sounds/enemy_lines/ouch.wav" id="7_kaiu8"]
+[ext_resource type="AudioStream" uid="uid://c5axmev8yennk" path="res://sounds/enemy_lines/damn.wav" id="8_usknb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rb0b3"]
+radius = 0.296945
+height = 1.208
+
+[node name="EnemyLawyer" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 5
+floor_stop_on_slope = false
+platform_floor_layers = 4278190081
+script = ExtResource("1_ysn01")
+suits = Array[Material]([ExtResource("2_i4wis"), ExtResource("3_gm3pk")])
+hp = 6
+walking_speed = 3.0
+projectile_scene = ExtResource("4_gm3pk")
+punch_sound = ExtResource("5_0dht6")
+throw_sound = ExtResource("6_kaiu8")
+spotted_sounds = Array[AudioStream]([ExtResource("6_rb0b3")])
+hurt_sounds = Array[AudioStream]([ExtResource("7_kaiu8")])
+dying_sounds = Array[AudioStream]([ExtResource("8_usknb")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00177019, 0.623917, -0.0387383)
+shape = SubResource("CapsuleShape3D_rb0b3")
+
+[node name="Lawyer" parent="." instance=ExtResource("1_lfs21")]
+
+[node name="TimeToHit" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="VisionRaycast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12101, 0)
+enabled = false
+target_position = Vector3(0, 0, -5)
+collision_mask = 3
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 3
+
+[node name="TimerToChangeState" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="PaperSpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788698, 1.0011, -0.433818)
+
+[connection signal="timeout" from="TimeToHit" to="." method="_on_time_to_hit_timeout"]
+[connection signal="timeout" from="TimerToChangeState" to="." method="_on_timer_to_change_state_timeout"]

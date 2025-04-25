@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b88yy4haug62g"]
+
+[ext_resource type="Texture2D" uid="uid://cfcq0o5v5x5pf" path="res://models/Textures/chiyomaga1.jpg" id="1_u6lr5"]
+
+[resource]
+albedo_texture = ExtResource("1_u6lr5")

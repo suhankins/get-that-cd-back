@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://p3rldtoewrh8"]
+
+[ext_resource type="Texture2D" uid="uid://dqpufvcrf54pm" path="res://models/Textures/Furnishings.Fabrics.Bandage.jpg" id="1_ew1b5"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_ew1b5")
+metallic_specular = 0.0

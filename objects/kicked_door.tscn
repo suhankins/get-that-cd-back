@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtobu4t16ibjd"]
+
+[ext_resource type="PackedScene" uid="uid://cfsrg1jjv1rg7" path="res://objects/door.tscn" id="1_l4ims"]
+[ext_resource type="Script" uid="uid://4gespp8m1giw" path="res://scripts/animation_object.gd" id="1_t8tre"]
+[ext_resource type="AudioStream" uid="uid://bmp3xwcy0eloh" path="res://sounds/impact.mp3" id="2_ohd3t"]
+[ext_resource type="AudioStream" uid="uid://s01ubxod5wl" path="res://sounds/hinge.mp3" id="2_t8tre"]
+[ext_resource type="SpriteFrames" uid="uid://c1tbosm1wfxu4" path="res://objects/impact_spriteframes.tres" id="2_twvnb"]
+
+[sub_resource type="Animation" id="Animation_t8tre"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ohd3t"]
+resource_name = "kicked"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5708)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"shot", 0.5, false],
+"method": &"play"
+}]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0753916,
+"stream": ExtResource("2_t8tre")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_ohd3t")
+}],
+"times": PackedFloat32Array(0, 0.266667)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_felo4"]
+_data = {
+&"RESET": SubResource("Animation_t8tre"),
+&"kicked": SubResource("Animation_ohd3t")
+}
+
+[node name="KickedDoor" type="Node3D"]
+script = ExtResource("1_t8tre")
+animation_name = &"kicked"
+
+[node name="Door" parent="." instance=ExtResource("1_l4ims")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_felo4")
+}
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18613, 0.652015, 0.488147)
+pixel_size = 0.02
+billboard = 2
+texture_filter = 0
+sprite_frames = ExtResource("2_twvnb")
+animation = &"shot"
+frame = 8
+frame_progress = 1.0
+speed_scale = 0.5
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 6.0

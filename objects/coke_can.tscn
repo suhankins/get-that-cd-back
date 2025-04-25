@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bijow716c6nl6"]
+
+[ext_resource type="Texture2D" uid="uid://bdo0j7anafk3l" path="res://sprites/coke_can.png" id="1_yxb86"]
+[ext_resource type="Script" uid="uid://dgywwdjsntrwf" path="res://scripts/breakable_prop.gd" id="2_pyj3x"]
+[ext_resource type="PackedScene" uid="uid://dhyfghcjekb6i" path="res://objects/can_break.tscn" id="3_6aenj"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6aenj"]
+height = 0.253235
+radius = 0.101563
+
+[node name="CokeCan" type="Area3D"]
+script = ExtResource("2_pyj3x")
+hp = 1
+explosion_scene = ExtResource("3_6aenj")
+
+[node name="CokeCan" type="Sprite3D" parent="."]
+pixel_size = 0.0008
+billboard = 2
+shaded = true
+texture = ExtResource("1_yxb86")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0361023, 0)
+shape = SubResource("CylinderShape3D_6aenj")

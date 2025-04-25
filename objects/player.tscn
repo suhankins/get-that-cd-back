@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl2ed4gkybggf"]
+
+[ext_resource type="Script" uid="uid://u2ar6dw7cvog" path="res://objects/player.gd" id="1_ffboj"]
+[ext_resource type="AudioStream" uid="uid://bhhp12ptb6g4x" path="res://sounds/swish_punch.mp3" id="2_3rfka"]
+[ext_resource type="AudioStream" uid="uid://0ful547o8u0n" path="res://sounds/hit.mp3" id="3_i8sra"]
+[ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
+[ext_resource type="Texture2D" uid="uid://dlnmyvj2atiyy" path="res://sprites/fist/fist_1.png" id="6_3rerk"]
+[ext_resource type="Texture2D" uid="uid://cmd63srshftqg" path="res://sprites/fist/fist_0.png" id="7_i825w"]
+[ext_resource type="Script" uid="uid://dw4nhcmo58ul" path="res://scripts/fist.gd" id="8_3rfka"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
+radius = 0.3
+height = 1.21571
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_ffboj")
+jump_strength = 4
+throw_punch_sound = ExtResource("2_3rfka")
+land_punch_sound = ExtResource("3_i8sra")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622659, 0)
+shape = SubResource("CapsuleShape3D_gdq8c")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12104, 0)
+
+[node name="Camera" type="Camera3D" parent="Head"]
+current = true
+fov = 80.0
+
+[node name="RayCast" type="RayCast3D" parent="Head/Camera"]
+enabled = false
+exclude_parent = false
+target_position = Vector3(0, 0, -1.2)
+collision_mask = 5
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ics1s")
+volume_db = -5.0
+autoplay = true
+
+[node name="Fists" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftFist" type="TextureRect" parent="Fists"]
+texture_filter = 1
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -237.0
+offset_right = -41.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(215, 237)
+texture = ExtResource("7_i825w")
+script = ExtResource("8_3rfka")
+idle_frame = ExtResource("7_i825w")
+punch_frame = ExtResource("6_3rerk")
+
+[node name="Cooldown" type="Timer" parent="Fists/LeftFist"]
+wait_time = 0.25
+one_shot = true
+
+[node name="RightFist" type="TextureRect" parent="Fists"]
+texture_filter = 1
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = -238.0
+offset_right = 270.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(215, 237)
+texture = ExtResource("7_i825w")
+flip_h = true
+script = ExtResource("8_3rfka")
+idle_frame = ExtResource("7_i825w")
+punch_frame = ExtResource("6_3rerk")
+
+[node name="Cooldown" type="Timer" parent="Fists/RightFist"]
+wait_time = 0.25
+one_shot = true
+
+[node name="PunchCooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="DamagedScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DamagedScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.105882)
+
+[connection signal="timeout" from="Fists/LeftFist/Cooldown" to="Fists/LeftFist" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Fists/RightFist/Cooldown" to="Fists/RightFist" method="_on_cooldown_timeout"]

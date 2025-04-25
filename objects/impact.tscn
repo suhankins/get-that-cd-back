@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7070gfoko4mo"]
+
+[ext_resource type="SpriteFrames" uid="uid://c1tbosm1wfxu4" path="res://objects/impact_spriteframes.tres" id="1_15nnu"]
+[ext_resource type="Script" uid="uid://cf836sf1uvkxf" path="res://objects/impact.gd" id="2_k826h"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
+cast_shadow = 0
+pixel_size = 0.0025
+billboard = 1
+double_sided = false
+no_depth_test = true
+texture_filter = 0
+sprite_frames = ExtResource("1_15nnu")
+animation = &"shot"
+script = ExtResource("2_k826h")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

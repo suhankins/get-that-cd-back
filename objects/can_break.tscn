@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhyfghcjekb6i"]
+
+[ext_resource type="AudioStream" uid="uid://c444mgrssat1" path="res://sounds/can_break.wav" id="1_u174l"]
+
+[node name="CanBreak" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_u174l")
+autoplay = true
+max_distance = 2.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxl05tkuo13gd"]
+
+[ext_resource type="Texture2D" uid="uid://po4krpvnrrlk" path="res://sprites/legal_paper.png" id="1_5m8cf"]
+
+[node name="LegalPaperSprite" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 0, 0)
+pixel_size = 0.001
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_5m8cf")

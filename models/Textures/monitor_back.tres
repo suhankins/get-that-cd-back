@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://h7io572564l0"]
+
+[ext_resource type="Texture2D" uid="uid://kigc2b7lj1w4" path="res://models/Textures/monitor_back.png" id="1_67n1o"]
+
+[resource]
+albedo_texture = ExtResource("1_67n1o")
+texture_repeat = false

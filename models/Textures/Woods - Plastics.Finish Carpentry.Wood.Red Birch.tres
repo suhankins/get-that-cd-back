@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dyhacb5o8bnom"]
+
+[ext_resource type="Texture2D" uid="uid://frwkx0vghdjm" path="res://models/Textures/Woods - Plastics.Finish Carpentry.Wood.Red Birch.jpg" id="1_4eue3"]
+
+[resource]
+albedo_texture = ExtResource("1_4eue3")

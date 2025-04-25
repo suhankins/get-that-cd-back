@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://gyk4bdd0xr63"]
+
+[ext_resource type="Texture2D" uid="uid://cve8371g5tnub" path="res://models/Textures/opencoatAGNET.png" id="1_472em"]
+
+[resource]
+resource_name = "opencoatAGNET.bmp"
+cull_mode = 2
+albedo_color = Color(0.874884, 0.828588, 0.860361, 1)
+albedo_texture = ExtResource("1_472em")
+metallic_specular = 0.0
+texture_filter = 0

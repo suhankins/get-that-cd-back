@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bm0vx6katookv"]
+
+[ext_resource type="Texture2D" uid="uid://y0pkvpne7lfc" path="res://models/Textures/Doors - Windows.Metal Doors - Frames.Steel.Galvanized.jpg" id="1_dclkv"]
+
+[resource]
+albedo_texture = ExtResource("1_dclkv")
+metallic = 0.4
+roughness = 0.6

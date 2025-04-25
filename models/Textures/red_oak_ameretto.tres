@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b02pn1d4gopro"]
+
+[ext_resource type="Texture2D" uid="uid://bnnbmfb7bc6vw" path="res://models/Textures/red_oak_amaretto.png" id="1_ruh5a"]
+
+[resource]
+albedo_texture = ExtResource("1_ruh5a")

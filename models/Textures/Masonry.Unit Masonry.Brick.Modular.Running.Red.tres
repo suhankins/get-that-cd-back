@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cj1r10of4lwjk"]
+
+[ext_resource type="Texture2D" uid="uid://q6bc4vlt4dg8" path="res://models/Textures/Masonry.Unit Masonry.Brick.Modular.Running.Red.jpg" id="1_768ov"]
+
+[resource]
+albedo_texture = ExtResource("1_768ov")
+metallic_specular = 0.0
+roughness = 0.0

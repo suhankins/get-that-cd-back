@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://clus7ns7kc2ya"]
+
+[ext_resource type="Texture2D" uid="uid://dy3qmsgbf4sw1" path="res://models/Textures/blueagent.png" id="1_0kgdg"]
+
+[resource]
+resource_name = "opencoatAGNET.bmp"
+cull_mode = 2
+albedo_color = Color(0.874884, 0.828588, 0.860361, 1)
+albedo_texture = ExtResource("1_0kgdg")
+metallic_specular = 0.0
+texture_filter = 0

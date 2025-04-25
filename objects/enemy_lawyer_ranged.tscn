@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx1rkq4x6uoi4"]
+
+[ext_resource type="PackedScene" uid="uid://b0t7akkvlb8s5" path="res://objects/enemy_lawyer.tscn" id="1_jj87s"]
+
+[node name="EnemyLawyerRanged" instance=ExtResource("1_jj87s")]
+chosen_suit = 1
+detection_radius = 15.0
+hp = 4
+can_do_ranged_attack = true

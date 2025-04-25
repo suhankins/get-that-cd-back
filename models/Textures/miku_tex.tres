@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://do2xvnstionnw"]
+
+[ext_resource type="Texture2D" uid="uid://bp33eoeo8yqn3" path="res://models/Textures/miku_tex.png" id="1_vcaiq"]
+
+[resource]
+albedo_texture = ExtResource("1_vcaiq")
+metallic_specular = 0.58
+roughness = 0.45

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://76doqois33s"]
+
+[ext_resource type="PackedScene" uid="uid://cxl05tkuo13gd" path="res://objects/legal_paper_sprite.tscn" id="1_e6qd8"]
+[ext_resource type="Script" uid="uid://d1db3iuwi3h37" path="res://scripts/legal_paper_projectile.gd" id="1_nqt0p"]
+[ext_resource type="AudioStream" uid="uid://dyf32myrgr4q1" path="res://sounds/knife.wav" id="2_r72fx"]
+[ext_resource type="AudioStream" uid="uid://dqdoa7r0g24t8" path="res://sounds/woosh.mp3" id="3_wawd1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nqt0p"]
+size = Vector3(0.05, 0.2, 0.2)
+
+[node name="LegalPaperProjectile" type="Area3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_nqt0p")
+speed = 4.0
+wall_hit_sound = ExtResource("2_r72fx")
+
+[node name="LegalPaperSprite" parent="." instance=ExtResource("1_e6qd8")]
+transform = Transform3D(0.126147, -0.124557, 0.984161, -5.48833e-09, 0.992096, 0.125558, -0.992012, -0.015839, 0.125149, 0, 0, 0)
+shaded = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nqt0p")
+debug_color = Color(0.98805, 0, 0.306323, 0.42)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_wawd1")
+autoplay = true
+max_distance = 5.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

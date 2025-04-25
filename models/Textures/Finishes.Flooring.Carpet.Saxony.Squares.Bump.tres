@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dwyob0sbscmp2"]
+
+[ext_resource type="Texture2D" uid="uid://cdp3guqhseid7" path="res://models/Textures/Finishes.Flooring.Carpet.Saxony.Squares.Bump.jpg" id="1_xwv4e"]
+
+[resource]
+albedo_texture = ExtResource("1_xwv4e")
+metallic_specular = 0.0

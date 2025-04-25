@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dbvg878l8uix"]
+
+[ext_resource type="Texture2D" uid="uid://bsvlhc60inivk" path="res://models/Textures/Azumanga_Daioh-Osaka.jpg" id="1_7g2k5"]
+
+[resource]
+albedo_texture = ExtResource("1_7g2k5")
