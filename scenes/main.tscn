@@ -16180,9 +16180,6 @@ script = ExtResource("4_tipki")
 mesh_vector_data = SubResource("Resource_s1sq2")
 materials = Array[Material]([ExtResource("9_choun"), ExtResource("27_fv21b")])
 
-[node name="Sofa" parent="Architexture" instance=ExtResource("15_ids8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30077, 1, -6.00992)
-
 [node name="Block_22" type="Node3D" parent="Architexture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -9.5)
 script = ExtResource("4_tipki")
@@ -17015,6 +17012,9 @@ omni_range = 10.839
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29702, 3.24573, -14.1317)
 shadow_enabled = true
 omni_range = 10.839
+
+[node name="Sofa" parent="." instance=ExtResource("15_ids8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30077, 1, -6.00992)
 
 [node name="TV" parent="." instance=ExtResource("15_0loja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34432, 1.77208, -8.7)
