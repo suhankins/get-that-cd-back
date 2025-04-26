@@ -20,9 +20,12 @@ func _on_body_entered(body: Node3D) -> void:
 	if (body is Player):
 		body.damage(1)
 		queue_free()
+	else:
+		reparent(body)
 
 
-func _on_area_entered(_area: Area3D) -> void:
+func _on_area_entered(area: Area3D) -> void:
+	reparent(area)
 	_on_wall_hit()
 
 func _on_wall_hit():
