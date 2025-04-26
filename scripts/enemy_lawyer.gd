@@ -162,8 +162,12 @@ func _on_timer_to_change_state_timeout() -> void:
 	if (state == STATE.WALK_A_FEW_METERS_FORWARD):
 		state = STATE.UNALERTED
 		return
-	if (state == STATE.GETTING_HIT or state == STATE.THROWING):
+	if (state == STATE.GETTING_HIT):
 		time_to_change_state_timer.start(0.2)
+		state = STATE.IDLE
+		return
+	if (state == STATE.THROWING):
+		time_to_change_state_timer.start(0.2 + randf_range(0.0, 0.2))
 		state = STATE.IDLE
 		return
 	if (state == STATE.WAITING_TO_WALK_A_FEW_METERS):
