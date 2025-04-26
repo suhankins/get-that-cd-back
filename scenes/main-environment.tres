@@ -16,7 +16,7 @@ radiance_size = 0
 
 [resource]
 background_mode = 2
-background_color = Color(0.929412, 0.839216, 0.796078, 1)
+background_color = Color(0.902575, 0.667636, 0.565888, 1)
 background_energy_multiplier = 1.6
 sky = SubResource("Sky_7bk1c")
 ambient_light_source = 2
@@ -34,6 +34,6 @@ glow_levels/5 = 0.0
 glow_intensity = 2.0
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.929975, 0.840164, 0.796953, 1)
+fog_light_color = Color(0.998832, 0.689762, 0.575248, 1)
 fog_density = 1.0
 fog_depth_curve = 4.75683
