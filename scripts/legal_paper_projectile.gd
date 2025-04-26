@@ -21,11 +21,11 @@ func _on_body_entered(body: Node3D) -> void:
 		body.damage(1)
 		queue_free()
 	else:
-		reparent(body)
+		call_deferred("reparent", body)
 
 
 func _on_area_entered(area: Area3D) -> void:
-	reparent(area)
+	call_deferred("reparent", area)
 	_on_wall_hit()
 
 func _on_wall_hit():
