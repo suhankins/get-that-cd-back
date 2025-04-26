@@ -19,6 +19,7 @@ explosion_scene = ExtResource("2_82512")
 pixel_size = 0.0025
 shaded = true
 double_sided = false
+render_priority = -1
 texture = ExtResource("1_yq5tl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

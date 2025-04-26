@@ -6911,14 +6911,14 @@ detection_radius = 1000.0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.304968, 1.00365, -5.79988)
 delay = 6.0
 seen_player = true
-walk_for_seconds = 1.5
+walk_for_seconds = 1.52
 detection_radius = 1000.0
 
 [node name="EnemyLawyerRanged2" parent="ScriptedSpawn0" instance=ExtResource("20_k22d5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 12.6389, 1.00365, -5.70053)
 delay = 6.0
 seen_player = true
-walk_for_seconds = 1.5
+walk_for_seconds = 1.51
 detection_radius = 1000.0
 
 [node name="EnemyLawyerRanged3" parent="ScriptedSpawn0" instance=ExtResource("20_k22d5")]
@@ -6932,7 +6932,7 @@ detection_radius = 1000.0
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 12.6389, 1.00365, -9.68904)
 delay = 6.0
 seen_player = true
-walk_for_seconds = 1.5
+walk_for_seconds = 1.55
 detection_radius = 1000.0
 
 [node name="KickedDoor" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
@@ -7032,6 +7032,7 @@ transform = Transform3D(-0.823146, 0.567829, -4.71411e-08, -8.74228e-08, -4.3711
 shaded = true
 double_sided = false
 texture_filter = 0
+render_priority = -1
 texture = ExtResource("14_igmy8")
 
 [node name="Window5" type="Sprite3D" parent="."]
@@ -7039,6 +7040,7 @@ transform = Transform3D(-0.823146, 0.567829, -4.71411e-08, -8.74228e-08, -4.3711
 shaded = true
 double_sided = false
 texture_filter = 0
+render_priority = -1
 texture = ExtResource("14_igmy8")
 
 [node name="Player" parent="." instance=ExtResource("8_ne2mo")]

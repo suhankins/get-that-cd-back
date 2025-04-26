@@ -17,6 +17,7 @@ monitorable = false
 pixel_size = 0.0025
 shaded = true
 double_sided = false
+render_priority = -1
 texture = ExtResource("2_ic2fv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
