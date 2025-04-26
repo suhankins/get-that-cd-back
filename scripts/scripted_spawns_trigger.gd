@@ -1,4 +1,4 @@
-extends Node
+class_name ScriptedSpawnsTrigger extends Node
 
 @export var animation_objects: Array[AnimationObject]
 @export var enemies: Array[Enemy]

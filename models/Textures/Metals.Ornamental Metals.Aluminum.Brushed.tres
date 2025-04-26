@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dd7foshx2ngq8"]
+
+[ext_resource type="Texture2D" uid="uid://d8q5v5x1j7od" path="res://models/Textures/Metals.Ornamental Metals.Aluminum.Brushed.jpg" id="1_8sfnl"]
+
+[resource]
+albedo_texture = ExtResource("1_8sfnl")
