@@ -9,6 +9,12 @@ class_name Enemy extends CharacterBody3D
 @onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var paper_spawn_point: Node3D = $PaperSpawnPoint
 
+@export_category("scripted spawn")
+@export var delay: float = 0.0
+## If true, enemy won't say "show me what you got"
+@export var seen_player = false
+@export var walk_for_seconds: float = 1.0
+
 @export_category("suit")
 @export var suits: Array[Material]
 @export var chosen_suit: int = 0:
@@ -36,7 +42,6 @@ const THROW_TIME_TO_HIT: float = 1.7
 @export var hurt_sounds: Array[AudioStream]
 @export var dying_sounds: Array[AudioStream]
 
-var seen_player = false
 var state: STATE = STATE.UNALERTED
 enum STATE {
 	UNALERTED,
@@ -46,14 +51,17 @@ enum STATE {
 	GETTING_HIT,
 	THROWING,
 	WALK_A_FEW_METERS_FORWARD,
+	WAITING_TO_WALK_A_FEW_METERS,
 	DEAD
 }
 
-func _process(delta: float) -> void:
+signal died
+
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	
-	if (state == STATE.DEAD):
+	if (state == STATE.DEAD or state == STATE.WAITING_TO_WALK_A_FEW_METERS):
 		return
 	if (state == STATE.UNALERTED):
 		if (_sees_player()):
@@ -83,9 +91,13 @@ func _process(delta: float) -> void:
 		_walk_forward()
 		return
 
-func walk_a_few_meters_forward():
-	state = STATE.WALK_A_FEW_METERS_FORWARD
-	time_to_change_state_timer.start(1.0)
+func walk_a_few_meters_forward() -> void:
+	if (delay > 0.0):
+		state = STATE.WAITING_TO_WALK_A_FEW_METERS
+		time_to_change_state_timer.start(delay)
+	else:
+		state = STATE.WALK_A_FEW_METERS_FORWARD
+		time_to_change_state_timer.start(walk_for_seconds)
 
 func _look_at_player():
 	look_at(player.position)
@@ -115,6 +127,7 @@ func damage(side: String):
 		animation_player.play("death")
 		state = STATE.DEAD
 		collision_layer = 0
+		died.emit()
 		return
 		
 	audio_player.stream = hurt_sounds.pick_random()
@@ -152,6 +165,10 @@ func _on_timer_to_change_state_timeout() -> void:
 	if (state == STATE.GETTING_HIT or state == STATE.THROWING):
 		time_to_change_state_timer.start(0.2)
 		state = STATE.IDLE
+		return
+	if (state == STATE.WAITING_TO_WALK_A_FEW_METERS):
+		delay = 0
+		walk_a_few_meters_forward()
 		return
 
 func _on_time_to_hit_timeout() -> void:

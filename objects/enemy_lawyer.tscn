@@ -21,6 +21,7 @@ collision_mask = 5
 floor_stop_on_slope = false
 platform_floor_layers = 4278190081
 script = ExtResource("1_ysn01")
+walk_for_seconds = null
 suits = Array[Material]([ExtResource("2_i4wis"), ExtResource("3_gm3pk")])
 hp = 6
 walking_speed = 3.0
@@ -45,7 +46,7 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12101, 0)
 enabled = false
 target_position = Vector3(0, 0, -5)
-collision_mask = 3
+collision_mask = 11
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 3
 

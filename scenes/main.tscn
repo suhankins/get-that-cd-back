@@ -16054,22 +16054,6 @@ category = ""
 data_type = 0
 stride = 1
 
-[sub_resource type="Resource" id="Resource_esrwe"]
-script = ExtResource("6_choun")
-data = PackedInt32Array(0, 0, 0, 0, 0, 0)
-name = &"material_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_4b36k"]
-script = ExtResource("5_85g3d")
-data = PackedByteArray(0, 1, 1, 1, 1, 1)
-name = &"visible"
-category = ""
-data_type = 0
-stride = 1
-
 [sub_resource type="Resource" id="Resource_1v8b0"]
 script = ExtResource("7_ya4ey")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
@@ -16078,13 +16062,13 @@ category = ""
 data_type = 4
 stride = 4
 
-[sub_resource type="Resource" id="Resource_683hg"]
-script = ExtResource("7_ya4ey")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
+[sub_resource type="Resource" id="Resource_esrwe"]
+script = ExtResource("6_choun")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
 category = ""
-data_type = 8
-stride = 6
+data_type = 1
+stride = 1
 
 [sub_resource type="Resource" id="Resource_ow8of"]
 script = ExtResource("5_85g3d")
@@ -16094,20 +16078,20 @@ category = ""
 data_type = 0
 stride = 1
 
-[sub_resource type="Resource" id="Resource_hj4tt"]
-script = ExtResource("6_choun")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
+[sub_resource type="Resource" id="Resource_683hg"]
+script = ExtResource("7_ya4ey")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
 category = ""
-data_type = 1
-stride = 1
+data_type = 8
+stride = 6
 
-[sub_resource type="Resource" id="Resource_kqx4a"]
-script = ExtResource("6_choun")
-data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
-name = &"vertex_index"
+[sub_resource type="Resource" id="Resource_4b36k"]
+script = ExtResource("5_85g3d")
+data = PackedByteArray(0, 1, 1, 1, 1, 1)
+name = &"visible"
 category = ""
-data_type = 1
+data_type = 0
 stride = 1
 
 [sub_resource type="Resource" id="Resource_pfcs8"]
@@ -16118,6 +16102,14 @@ category = ""
 data_type = 4
 stride = 4
 
+[sub_resource type="Resource" id="Resource_hj4tt"]
+script = ExtResource("6_choun")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+category = ""
+data_type = 1
+stride = 1
+
 [sub_resource type="Resource" id="Resource_50d7c"]
 script = ExtResource("7_ya4ey")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
@@ -16125,6 +16117,14 @@ name = &"normal"
 category = ""
 data_type = 6
 stride = 3
+
+[sub_resource type="Resource" id="Resource_kqx4a"]
+script = ExtResource("6_choun")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+category = ""
+data_type = 1
+stride = 1
 
 [sub_resource type="Resource" id="Resource_ruytr"]
 script = ExtResource("7_ya4ey")
@@ -17027,10 +17027,12 @@ texture = ExtResource("23_pm3ni")
 
 [node name="EnemyLawyer3" parent="ScriptedSpawn0" instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.99759, 0, 0.0693909, 0, 1, 0, -0.0693909, 0, -0.99759, -2.66501, 1.00365, -13.1762)
+walk_for_seconds = null
 walking_speed = 2.0
 
 [node name="EnemyLawyer4" parent="ScriptedSpawn0" instance=ExtResource("25_og1vs")]
 transform = Transform3D(0.999875, 0, 0.0157597, 0, 1, 0, -0.0157597, 0, 0.999875, -2.61535, 1.00365, -8.9972)
+walk_for_seconds = null
 walking_speed = 2.0
 
 [node name="KickedDoor" parent="ScriptedSpawn0" instance=ExtResource("38_pibwh")]
@@ -17089,9 +17091,11 @@ delay = 5.0
 
 [node name="EnemyLawyer6" parent="Node" instance=ExtResource("25_og1vs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.56182, 1.00812, -28.7121)
+walk_for_seconds = null
 
 [node name="EnemyLawyer7" parent="Node" instance=ExtResource("25_og1vs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.56182, 1.00812, -29.3827)
+walk_for_seconds = null
 
 [node name="Trigger" type="Area3D" parent="Node" node_paths=PackedStringArray("enemies")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.17021, 1.48678, -25.9854)
@@ -17200,9 +17204,11 @@ omni_range = 10.839
 
 [node name="EnemyLawyer" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.936959, 0, -0.349439, 0, 1, 0, 0.349439, 0, -0.936959, -7.99645, 1.00365, -7.21725)
+walk_for_seconds = null
 
 [node name="EnemyLawyer2" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.997754, 0, 0.066988, 0, 1, 0, -0.066988, 0, -0.997754, -6.88789, 1.00365, -7.21731)
+walk_for_seconds = null
 
 [node name="Door6" parent="." instance=ExtResource("32_fuf3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1229, 1.00139, -16.2324)
@@ -17466,12 +17472,15 @@ texture = ExtResource("43_chjal")
 
 [node name="EnemyLawyer3" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.382087, 0, -0.924126, 0, 1, 0, 0.924126, 0, -0.382087, 0.531895, 1.00357, -16.5645)
+walk_for_seconds = null
 
 [node name="EnemyLawyer5" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.986999, 0, -0.160725, 0, 1, 0, 0.160725, 0, -0.986999, 0.531895, 1.00357, -20.0866)
+walk_for_seconds = null
 
 [node name="EnemyLawyer4" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(0.311771, 0, -0.950157, 0, 1, 0, 0.950157, 0, 0.311771, -0.0754895, 1.00357, -15.1122)
+walk_for_seconds = null
 
 [node name="EnemyLawyerRanged2" parent="." instance=ExtResource("33_5q0nq")]
 transform = Transform3D(-1, 0, 0.000279339, 0, 1, 0, -0.000279339, 0, -1, 0.476599, 1.00357, -24.1086)

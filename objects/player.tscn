@@ -14,7 +14,7 @@ height = 1.21571
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("1_ffboj")
 jump_strength = 4
 throw_punch_sound = ExtResource("2_3rfka")
@@ -35,7 +35,7 @@ fov = 80.0
 enabled = false
 exclude_parent = false
 target_position = Vector3(0, 0, -1.2)
-collision_mask = 5
+collision_mask = 13
 hit_from_inside = true
 collide_with_areas = true
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwmwt6ualv3mh"]
+
+[ext_resource type="Script" uid="uid://dgywwdjsntrwf" path="res://scripts/breakable_prop.gd" id="1_ga8ft"]
+[ext_resource type="Texture2D" uid="uid://bdp2web51cuq4" path="res://sprites/elevator_button.png" id="1_yq5tl"]
+[ext_resource type="PackedScene" uid="uid://c0ehiynfqnrjt" path="res://objects/elevator_button_on.tscn" id="2_82512"]
+[ext_resource type="Texture2D" uid="uid://15is543gufx1" path="res://sprites/aic_glow.png" id="3_qt15w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ga8ft"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="ElevatorButtonOff" type="Area3D"]
+monitoring = false
+monitorable = false
+script = ExtResource("1_ga8ft")
+hp = 1
+explosion_scene = ExtResource("2_82512")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0025
+shaded = true
+double_sided = false
+texture = ExtResource("1_yq5tl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+shape = SubResource("BoxShape3D_ga8ft")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102687, 0.10893, 0)
+modulate = Color(1, 0, 0, 1)
+pixel_size = 0.002
+texture = ExtResource("3_qt15w")
