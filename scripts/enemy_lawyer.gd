@@ -92,6 +92,8 @@ func _process(_delta: float) -> void:
 		return
 
 func walk_a_few_meters_forward() -> void:
+	if (state == STATE.DEAD):
+		return
 	if (delay > 0.0):
 		state = STATE.WAITING_TO_WALK_A_FEW_METERS
 		time_to_change_state_timer.start(delay)
