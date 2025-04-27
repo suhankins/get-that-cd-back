@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=13 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" uid="uid://u2ar6dw7cvog" path="res://objects/player.gd" id="1_ffboj"]
 [ext_resource type="AudioStream" uid="uid://bhhp12ptb6g4x" path="res://sounds/swish_punch.mp3" id="2_3rfka"]
 [ext_resource type="AudioStream" uid="uid://0ful547o8u0n" path="res://sounds/hit.mp3" id="3_i8sra"]
+[ext_resource type="AudioStream" uid="uid://b8qf72soewbku" path="res://sounds/hurt.mp3" id="4_3nfmf"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
 [ext_resource type="Texture2D" uid="uid://dlnmyvj2atiyy" path="res://sprites/fist/fist_1.png" id="6_3rerk"]
 [ext_resource type="Texture2D" uid="uid://cmd63srshftqg" path="res://sprites/fist/fist_0.png" id="7_i825w"]
@@ -22,6 +23,7 @@ script = ExtResource("1_ffboj")
 jump_strength = 4
 throw_punch_sound = ExtResource("2_3rfka")
 land_punch_sound = ExtResource("3_i8sra")
+hurt_sound = ExtResource("4_3nfmf")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622659, 0)
@@ -45,7 +47,6 @@ collide_with_areas = true
 [node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ics1s")
 volume_db = -5.0
-autoplay = true
 
 [node name="Fists" type="Control" parent="."]
 layout_mode = 3

@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody3D
 
+@export var enabled = true
+
 @export_subgroup("Properties")
 @export var movement_speed = 5
 @export var jump_strength = 8
@@ -7,6 +9,7 @@ class_name Player extends CharacterBody3D
 @export_subgroup("Sounds")
 @export var throw_punch_sound: AudioStream
 @export var land_punch_sound: AudioStream
+@export var hurt_sound: AudioStream
 
 
 @onready var hand_holding_cd: TextureRect = $"Fists/HandHoldingCD"
@@ -29,8 +32,6 @@ var gravity := 0.0
 
 var previously_floored := false
 
-var tween: Tween
-
 signal health_updated
 
 @onready var camera = $Head/Camera
@@ -49,6 +50,10 @@ func _ready():
 	rotation_target.z = camera.global_rotation.z
 
 func _physics_process(delta):
+	_mouse_capture_handling()
+	
+	if (!enabled):
+		return
 	
 	# Handle functions
 	
@@ -75,7 +80,9 @@ func _physics_process(delta):
 	rotation.y = lerp_angle(rotation.y, rotation_target.y, delta * 25)
 	
 	# Movement sound
-	
+	if (!sound_footsteps.playing):
+		sound_footsteps.play()
+
 	sound_footsteps.stream_paused = true
 	
 	if is_on_floor():
@@ -104,7 +111,7 @@ func _input(event):
 		rotation_target.y -= event.relative.x / mouse_sensitivity
 		rotation_target.x -= event.relative.y / mouse_sensitivity
 
-func handle_controls(_delta):
+func _mouse_capture_handling():
 	if Input.is_action_just_pressed("mouse_capture"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		mouse_captured = true
@@ -114,7 +121,8 @@ func handle_controls(_delta):
 		mouse_captured = false
 		
 		input_mouse = Vector2.ZERO
-	
+
+func handle_controls(_delta):
 	# Movement
 	
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -193,6 +201,7 @@ func action_shoot():
 func damage(amount):
 	health -= amount
 	health_updated.emit(health) # Update health on HUD
+	Audio.play_stream(hurt_sound)
 	
 	if health < 0:
 		get_tree().reload_current_scene() # Reset when out of health
