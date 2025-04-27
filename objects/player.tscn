@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=11 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" uid="uid://u2ar6dw7cvog" path="res://objects/player.gd" id="1_ffboj"]
 [ext_resource type="AudioStream" uid="uid://bhhp12ptb6g4x" path="res://sounds/swish_punch.mp3" id="2_3rfka"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dlnmyvj2atiyy" path="res://sprites/fist/fist_1.png" id="6_3rerk"]
 [ext_resource type="Texture2D" uid="uid://cmd63srshftqg" path="res://sprites/fist/fist_0.png" id="7_i825w"]
 [ext_resource type="Script" uid="uid://dw4nhcmo58ul" path="res://scripts/fist.gd" id="8_3rfka"]
+[ext_resource type="Texture2D" uid="uid://gwe0vigucb37" path="res://sprites/black_coat.png" id="8_i8sra"]
+[ext_resource type="Script" uid="uid://t7ax76qsc0t6" path="res://scripts/debug_only.gd" id="9_4vq5b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -120,6 +122,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 0.105882)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.728451, 0)
+billboard = 2
+texture = ExtResource("8_i8sra")
+script = ExtResource("9_4vq5b")
 
 [connection signal="timeout" from="Fists/LeftFist/Cooldown" to="Fists/LeftFist" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="Fists/RightFist/Cooldown" to="Fists/RightFist" method="_on_cooldown_timeout"]
