@@ -32,7 +32,7 @@ var gravity := 0.0
 
 var previously_floored := false
 
-signal health_updated
+signal health_updated(health: int)
 
 @onready var camera = $Head/Camera
 @onready var raycast = $Head/Camera/RayCast
@@ -51,34 +51,6 @@ func _ready():
 
 func _physics_process(delta):
 	_mouse_capture_handling()
-	
-	if (!enabled):
-		return
-	
-	# Handle functions
-	
-	handle_controls(delta)
-	handle_gravity(delta)
-	
-	# Movement
-
-	var applied_velocity: Vector3
-	
-	movement_velocity = transform.basis * movement_velocity # Move forward
-	
-	applied_velocity = velocity.lerp(movement_velocity, delta * 10)
-	applied_velocity.y = -gravity
-	
-	velocity = applied_velocity
-	move_and_slide()
-	
-	# Rotation
-	
-	camera.rotation.z = lerp_angle(camera.rotation.z, -input_mouse.x * 25 * delta, delta * 5)	
-	
-	camera.rotation.x = lerp_angle(camera.rotation.x, rotation_target.x, delta * 25)
-	rotation.y = lerp_angle(rotation.y, rotation_target.y, delta * 25)
-	
 	# Movement sound
 	if (!sound_footsteps.playing):
 		sound_footsteps.play()
@@ -89,6 +61,24 @@ func _physics_process(delta):
 		if abs(velocity.x) > 1 or abs(velocity.z) > 1:
 			sound_footsteps.stream_paused = false
 	
+	if (!enabled):
+		return
+	
+	# Handle functions
+	
+	handle_controls(delta)
+	handle_gravity(delta)
+	
+	# Movement
+	handle_movement(delta)
+	
+	# Rotation
+	
+	camera.rotation.z = lerp_angle(camera.rotation.z, -input_mouse.x * 25 * delta, delta * 5)	
+	
+	camera.rotation.x = lerp_angle(camera.rotation.x, rotation_target.x, delta * 25)
+	rotation.y = lerp_angle(rotation.y, rotation_target.y, delta * 25)
+		
 	# Landing after jump or falling
 	
 	camera.position.y = lerp(camera.position.y, 0.0, delta * 5)
@@ -100,6 +90,19 @@ func _physics_process(delta):
 	
 	if position.y < -10:
 		get_tree().reload_current_scene()
+
+
+func handle_movement(delta: float) -> void:
+	var applied_velocity: Vector3
+	
+	movement_velocity = transform.basis * movement_velocity # Move forward
+	
+	applied_velocity = velocity.lerp(movement_velocity, delta * 10)
+	applied_velocity.y = -gravity
+	
+	velocity = applied_velocity
+	move_and_slide()
+
 
 # Mouse movement
 
@@ -197,6 +200,12 @@ func action_shoot():
 
 		impact_instance.position = raycast.get_collision_point() + (raycast.get_collision_normal() / 10)
 		impact_instance.look_at(camera.global_transform.origin, Vector3.UP, true) 
+
+func enable() -> void:
+	self.enabled = true
+
+func disable() -> void:
+	self.enabled = false
 
 func damage(amount):
 	health -= amount
