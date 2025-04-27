@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxl05tkuo13gd" path="res://objects/legal_paper_sprite.tscn" id="3_40du0"]
 [ext_resource type="AudioStream" uid="uid://dqdoa7r0g24t8" path="res://sounds/woosh.mp3" id="4_pcype"]
 [ext_resource type="Material" uid="uid://mn27mkkwj3je" path="res://models/Textures/ceo_suit.tres" id="4_w3dh5"]
-[ext_resource type="AudioStream" uid="uid://bmp3xwcy0eloh" path="res://sounds/impact.mp3" id="5_xrgr4"]
+[ext_resource type="AudioStream" uid="uid://d7yaxaxjbeqe" path="res://sounds/FE.Drop.mp3" id="5_pcype"]
 
 [sub_resource type="Animation" id="Animation_mqe2f"]
 length = 0.001
@@ -1058,7 +1058,7 @@ tracks/109/keys = {
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_xrgr4")
+"stream": ExtResource("5_pcype")
 }],
 "times": PackedFloat32Array(1.36667, 2)
 }
