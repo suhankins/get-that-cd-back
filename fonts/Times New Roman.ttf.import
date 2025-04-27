@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bgm2dsqd4r8fu"
-path="res://.godot/imported/sfnt_30854_Times.ttf-2db2476ea0af424a9eb2b549bf591591.fontdata"
+uid="uid://c1yvyujfpwjmc"
+path="res://.godot/imported/Times New Roman.ttf-99c805fd20217d2d4e86ca84684af631.fontdata"
 
 [deps]
 
-source_file="res://fonts/sfnt_30854_Times.ttf"
-dest_files=["res://.godot/imported/sfnt_30854_Times.ttf-2db2476ea0af424a9eb2b549bf591591.fontdata"]
+source_file="res://fonts/Times New Roman.ttf"
+dest_files=["res://.godot/imported/Times New Roman.ttf-99c805fd20217d2d4e86ca84684af631.fontdata"]
 
 [params]
 
