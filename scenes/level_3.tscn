@@ -1,4 +1,4 @@
-[gd_scene load_steps=701 format=3 uid="uid://bq7n21n7bg4iq"]
+[gd_scene load_steps=707 format=3 uid="uid://bq7n21n7bg4iq"]
 
 [ext_resource type="PackedScene" uid="uid://bj52a7edcuqjv" path="res://objects/elevator_doors.tscn" id="1_ha73p"]
 [ext_resource type="PackedScene" uid="uid://c0ehiynfqnrjt" path="res://objects/elevator_button_on.tscn" id="2_vcx5n"]
@@ -44,7 +44,13 @@
 [ext_resource type="PackedScene" uid="uid://bagk1is8oydy" path="res://objects/lawyer.tscn" id="40_1ke33"]
 [ext_resource type="Script" uid="uid://4gespp8m1giw" path="res://scripts/animation_object.gd" id="42_be7ao"]
 [ext_resource type="PackedScene" uid="uid://bb8pmrrodfde0" path="res://models/b1_skyscraper.glb" id="43_1x8o1"]
+[ext_resource type="PackedScene" uid="uid://cb2iqq04iodw" path="res://objects/dialogue_player.tscn" id="45_7mmqb"]
 [ext_resource type="PackedScene" uid="uid://bgcxkpk3hsit7" path="res://objects/total_awesomesauce_cd.tscn" id="45_hs0n0"]
+[ext_resource type="AudioStream" uid="uid://dx6ctl6iul5ub" path="res://sounds/cutscenes/villain_license_key.mp3" id="46_sf7oq"]
+[ext_resource type="Theme" uid="uid://bqeui4c6t5e7c" path="res://themes/villain_dialogue.tres" id="47_kmaj6"]
+[ext_resource type="AudioStream" uid="uid://bn8g5grx7w7ww" path="res://sounds/cutscenes/villain_take_your_cd.mp3" id="48_sf7oq"]
+[ext_resource type="AudioStream" uid="uid://d7rjelwm2480" path="res://sounds/cutscenes/mc_i_hope_ill_never_see_you_again.mp3" id="50_12f7l"]
+[ext_resource type="Theme" uid="uid://dn2pmtviyreha" path="res://themes/player_dialogue.tres" id="51_76odh"]
 
 [sub_resource type="Resource" id="Resource_hree8"]
 script = ExtResource("4_ax3dk")
@@ -7565,11 +7571,30 @@ animation_name = &"ceo_hide"
 
 [node name="ScriptedSceneTrigger" type="Node" parent="ScriptedSceneFinal" node_paths=PackedStringArray("animation_objects")]
 script = ExtResource("30_ld1e4")
-animation_objects = [NodePath("../Lawyer")]
+animation_objects = [NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2")]
+
+[node name="DialoguePlayer" parent="ScriptedSceneFinal" instance=ExtResource("45_7mmqb")]
+text = "Wait, no, you don't have a license key!"
+stream = ExtResource("46_sf7oq")
+theme = ExtResource("47_kmaj6")
+delay = 0.5
+
+[node name="DialoguePlayer2" parent="ScriptedSceneFinal" instance=ExtResource("45_7mmqb")]
+text = "Please just take your CD and leave"
+stream = ExtResource("48_sf7oq")
+theme = ExtResource("47_kmaj6")
+delay = 5.0
 
 [node name="TotalAwesomesauceCD" parent="." instance=ExtResource("45_hs0n0")]
 transform = Transform3D(-0.300356, 0, 0.953827, 0, 1, 0, -0.953827, 0, -0.300356, -3.96296, 1, -7.04305)
 
+[node name="DialoguePlayer3" parent="." instance=ExtResource("45_7mmqb")]
+text = "I hope I'll never have to see you again."
+stream = ExtResource("50_12f7l")
+theme = ExtResource("51_76odh")
+delay = 0.5
+
 [connection signal="body_entered" from="ScriptedSpawn0/Area3D" to="ScriptedSpawn0/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="ScriptedSpawn1/Area3D" to="ScriptedSpawn1/Area3D" method="_on_body_entered"]
 [connection signal="broke" from="ScriptedSceneFinal/FinalDoor" to="ScriptedSceneFinal/ScriptedSceneTrigger" method="_on_elevator_button_off_broke"]
+[connection signal="broke" from="TotalAwesomesauceCD" to="DialoguePlayer3" method="play_animation"]
