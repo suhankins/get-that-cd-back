@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=16 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" uid="uid://u2ar6dw7cvog" path="res://objects/player.gd" id="1_ffboj"]
 [ext_resource type="AudioStream" uid="uid://bhhp12ptb6g4x" path="res://sounds/swish_punch.mp3" id="2_3rfka"]
@@ -11,10 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://7ljf8rvjrrya" path="res://sprites/fist/left_hand_holding_cd.png" id="8_4vq5b"]
 [ext_resource type="Texture2D" uid="uid://gwe0vigucb37" path="res://sprites/black_coat.png" id="8_i8sra"]
 [ext_resource type="Script" uid="uid://t7ax76qsc0t6" path="res://scripts/debug_only.gd" id="9_4vq5b"]
+[ext_resource type="FontFile" uid="uid://bn68uumtyruqh" path="res://fonts/DejaVuSans-BoldOblique.ttf" id="12_42cpl"]
+[ext_resource type="Script" uid="uid://csgnnvtejbbrg" path="res://scripts/hp_display.gd" id="13_vqq2l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
 height = 1.21571
+
+[sub_resource type="LabelSettings" id="LabelSettings_vqq2l"]
+font = ExtResource("12_42cpl")
+font_size = 92
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
@@ -149,5 +158,19 @@ billboard = 2
 texture = ExtResource("8_i8sra")
 script = ExtResource("9_4vq5b")
 
+[node name="HPDisplay" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -57.0
+offset_right = 92.0
+offset_bottom = -8.0
+grow_vertical = 0
+text = "4/4"
+label_settings = SubResource("LabelSettings_vqq2l")
+script = ExtResource("13_vqq2l")
+
+[connection signal="health_updated" from="." to="HPDisplay" method="_on_player_health_updated"]
 [connection signal="timeout" from="Fists/LeftFist/Cooldown" to="Fists/LeftFist" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="Fists/RightFist/Cooldown" to="Fists/RightFist" method="_on_cooldown_timeout"]
