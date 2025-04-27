@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=4 uid="uid://bmih2vjaa10if"]
+
+[ext_resource type="Material" uid="uid://cxvlvjl4g52m3" path="res://models/Textures/red_oak_chocolateBrown.tres" id="6_5ge28"]
+[ext_resource type="Material" uid="uid://1bkrtbx5j3ky" path="res://models/Textures/s_wardrobe_wood.tres" id="7_11tg7"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bcyvc"]
+_surfaces = [{
+"aabb": AABB(0.2, 0, 0, 1.6, 2.2, 0.700001),
+"format": 34359738369,
+"material": ExtResource("6_5ge28"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("zcxMPs3MDEAAAAAAzcxMPs3MDEBEMzM/zcxMPgAAAABEMzM/zcxMPs3MDEAAAAAAzcxMPgAAAABEMzM/zcxMPgAAAAAAAAAAZmbmPwAAAAAAAAAAZmbmPwAAAABEMzM/ZmbmP83MDEBEMzM/ZmbmPwAAAAAAAAAAZmbmP83MDEBEMzM/ZmbmP83MDEAAAAAAzcxMPs3MDEBEMzM/zcxMPs3MDEAAAAAAZmbmP83MDEAAAAAAzcxMPs3MDEBEMzM/ZmbmP83MDEAAAAAAZmbmP83MDEBEMzM/zcxMPgAAAAAAAAAAzcxMPgAAAABEMzM/ZmbmPwAAAABEMzM/zcxMPgAAAAAAAAAAZmbmPwAAAABEMzM/ZmbmPwAAAAAAAAAAzcxMPs3MDEAAAAAAzcxMPgAAAAAAAAAAZmbmPwAAAAAAAAAAzcxMPs3MDEAAAAAAZmbmPwAAAAAAAAAAZmbmP83MDEAAAAAA")
+}, {
+"aabb": AABB(0.2, 0, 0.700001, 1.6, 2.2, 1e-05),
+"format": 34359738369,
+"material": ExtResource("7_11tg7"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("zcxMPgAAAABEMzM/zcxMPs3MDEBEMzM/ZmbmP83MDEBEMzM/zcxMPgAAAABEMzM/ZmbmP83MDEBEMzM/ZmbmPwAAAABEMzM/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3omwu"]
+lightmap_size_hint = Vector2i(1000, 1000)
+_surfaces = [{
+"aabb": AABB(0.2, 0, 0, 1.6, 2.2, 0.700001),
+"attribute_data": PackedByteArray("/////wAAAADNzAzACYxAPdV6Pz7/////RDMzv83MDMAJjEA9hyc3Pf////9EMzO/AAAAAEZgBD+HJzc9/////wAAAAAAAAAARmAEP9V6Pz7/////AAAAAAAAAAAJjEA9xl/WPv////9EMzO/AAAAAAmMQD1Nh40+/////0QzM7/NzAzARmAEP02HjT7/////AAAAAM3MDMBGYAQ/xl/WPv/////NzEy+RDMzv8hxHD9bPDk//////83MTL4AAAAAyHEcPx7QFD//////ZmbmvwAAAABA93M/HtAUP/////9mZua/RDMzv0D3cz9bPDk//////83MTL4AAAAAyHEcP4mNdD//////zcxMvkQzM7/IcRw/SyFQP/////9mZua/RDMzv0D3cz9LIVA//////2Zm5r8AAAAAQPdzP4mNdD//////zcxMvs3MDMDIcRw/hyc3Pf/////NzEy+AAAAAMhxHD9a1vs+/////2Zm5r8AAAAAQPdzP1rW+z7/////Zmbmv83MDMBA93M/hyc3PQ=="),
+"format": 34359742527,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMA"),
+"material": ExtResource("6_5ge28"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("zcxMPs3MDEAAAAAAzcxMPs3MDEBEMzM/zcxMPgAAAABEMzM/zcxMPgAAAAAAAAAAZmbmPwAAAAAAAAAAZmbmPwAAAABEMzM/ZmbmP83MDEBEMzM/ZmbmP83MDEAAAAAAzcxMPs3MDEBEMzM/zcxMPs3MDEAAAAAAZmbmP83MDEAAAAAAZmbmP83MDEBEMzM/zcxMPgAAAAAAAAAAzcxMPgAAAABEMzM/ZmbmPwAAAABEMzM/ZmbmPwAAAAAAAAAAzcxMPs3MDEAAAAAAzcxMPgAAAAAAAAAAZmbmPwAAAAAAAAAAZmbmP83MDEAAAAAAAAD/f///AAAAAP9///8AAAAA/3///wAAAAD/f///AAD///9//////////3//////////f/////////9///////9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/z//fwAAAAD/P/9/AAAAAP8//38AAAAA/z//////AAD/v/////8AAP+//////wAA/7//////AAD/vw==")
+}, {
+"aabb": AABB(0.2, 0, 0.700001, 1.6, 2.2, 1e-05),
+"attribute_data": PackedByteArray("/////5DCdT0AAAAACYxAPdQUAj//////kMJ1PaRwfb9GYAQ/1BQCP/////8Uroe/pHB9v0ZgBD9YVVU//////xSuh78AAAAACYxAPVhVVT8="),
+"format": 34359742527,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAACAAMA"),
+"material": ExtResource("7_11tg7"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("zcxMPgAAAABEMzM/zcxMPs3MDEBEMzM/ZmbmP83MDEBEMzM/ZmbmPwAAAABEMzM//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//fwAA/z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bcyvc")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_75ri5"]
+points = PackedVector3Array(0.2, 0, 0, 0.2, 0, 0.700001, 0.2, 2.2, 0, 1.79984, 0, 0, 1.79984, 0, 0.700001, 0.2, 2.2, 0.700001, 1.79984, 2.2, 0, 1.79984, 2.2, 0.700001)
+
+[node name="Wardrobe" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="Wardrobe_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = SubResource("ArrayMesh_3omwu")
+
+[node name="Wardrobe_col" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wardrobe_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_75ri5")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=1647 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=1634 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
@@ -26,6 +26,7 @@
 [ext_resource type="Material" uid="uid://b2p01qpmcx47v" path="res://models/Textures/fabric_red.tres" id="24_vxglm"]
 [ext_resource type="PackedScene" uid="uid://b0t7akkvlb8s5" path="res://objects/enemy_lawyer.tscn" id="25_og1vs"]
 [ext_resource type="Material" uid="uid://d1astxq58fpy1" path="res://models/Textures/Masonry.Stone.Onyx.Black.tres" id="25_yq6so"]
+[ext_resource type="PackedScene" uid="uid://bmih2vjaa10if" path="res://objects/wardrobe.tscn" id="26_ids8r"]
 [ext_resource type="Material" uid="uid://cj1r10of4lwjk" path="res://models/Textures/Masonry.Unit Masonry.Brick.Modular.Running.Red.tres" id="27_fv21b"]
 [ext_resource type="Material" uid="uid://du5en8d3ccdwf" path="res://models/Textures/Finishes.Masonry Flooring.Marble.Brown.tres" id="28_tel4y"]
 [ext_resource type="Material" uid="uid://dra3bbgi37i00" path="res://models/Textures/evangelion_18_1024.tres" id="29_qkpxi"]
@@ -43,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://b4w1plr1yijtv" path="res://objects/pushout_wardrobe.tscn" id="33_cjqg0"]
 [ext_resource type="Material" uid="uid://dwyob0sbscmp2" path="res://models/Textures/Finishes.Flooring.Carpet.Saxony.Squares.Bump.tres" id="33_txyw0"]
 [ext_resource type="Texture2D" uid="uid://c3vfqn2ghof8n" path="res://models/Textures/door_number.jpg" id="34_dgi5k"]
-[ext_resource type="Material" uid="uid://1bkrtbx5j3ky" path="res://models/Textures/s_wardrobe_wood.tres" id="35_j2jfr"]
 [ext_resource type="Texture2D" uid="uid://co5k0ioiufy1" path="res://sprites/arrow_graffiti.png" id="38_5poiv"]
 [ext_resource type="PackedScene" uid="uid://dtobu4t16ibjd" path="res://objects/kicked_door.tscn" id="38_pibwh"]
 [ext_resource type="Script" uid="uid://dntie1yqgx83l" path="res://scripts/scripted_spawns_trigger.gd" id="39_c6pm6"]
@@ -11060,137 +11060,6 @@ face_vertex_data = {
 &"vertex_index": SubResource("Resource_bk1nh")
 }
 
-[sub_resource type="Resource" id="Resource_435sd"]
-script = ExtResource("5_85g3d")
-data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_1xmg7"]
-script = ExtResource("7_ya4ey")
-data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-name = &"color"
-category = ""
-data_type = 4
-stride = 4
-
-[sub_resource type="Resource" id="Resource_uyqr3"]
-script = ExtResource("6_choun")
-data = PackedInt32Array(0, 0, 0, 1, 0, 0)
-name = &"material_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_sq4er"]
-script = ExtResource("5_85g3d")
-data = PackedByteArray(0, 0, 0, 1, 0, 0)
-name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_dqmwh"]
-script = ExtResource("7_ya4ey")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0.7, 0, 0, 0.45, 0.2, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
-category = ""
-data_type = 8
-stride = 6
-
-[sub_resource type="Resource" id="Resource_5w1pr"]
-script = ExtResource("5_85g3d")
-data = PackedByteArray(1, 1, 1, 1, 1, 1)
-name = &"visible"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_pvm2i"]
-script = ExtResource("7_ya4ey")
-data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-name = &"color"
-category = ""
-data_type = 4
-stride = 4
-
-[sub_resource type="Resource" id="Resource_1vw46"]
-script = ExtResource("6_choun")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_jad2d"]
-script = ExtResource("7_ya4ey")
-data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
-name = &"normal"
-category = ""
-data_type = 6
-stride = 3
-
-[sub_resource type="Resource" id="Resource_6eu5u"]
-script = ExtResource("6_choun")
-data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
-name = &"vertex_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_qwhi5"]
-script = ExtResource("7_ya4ey")
-data = PackedFloat32Array(0.2, 2.2, 0, 0.2, 2.2, 0.700001, 0.2, 0, 0.700001, 0.2, 0, 0, 1.8, 2.2, 0, 1.8, 2.2, 0.700001, 1.8, 0, 0.700001, 1.8, 0, 0)
-name = &"position"
-category = ""
-data_type = 6
-stride = 3
-
-[sub_resource type="Resource" id="Resource_6ho0w"]
-script = ExtResource("5_85g3d")
-data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
-name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_hhynb"]
-script = ExtResource("8_eb6dy")
-num_vertices = 8
-num_edges = 12
-num_faces = 6
-num_face_vertices = 24
-active_vertex = -1
-active_edge = -1
-active_face = 3
-active_face_vertex = -1
-edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
-edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
-face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
-face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
-vertex_data = {
-&"position": SubResource("Resource_qwhi5"),
-&"selected": SubResource("Resource_6ho0w")
-}
-edge_data = {
-&"selected": SubResource("Resource_435sd")
-}
-face_data = {
-&"color": SubResource("Resource_1xmg7"),
-&"material_index": SubResource("Resource_uyqr3"),
-&"selected": SubResource("Resource_sq4er"),
-&"uv_transform": SubResource("Resource_dqmwh"),
-&"visible": SubResource("Resource_5w1pr")
-}
-face_vertex_data = {
-&"color": SubResource("Resource_pvm2i"),
-&"face_index": SubResource("Resource_1vw46"),
-&"normal": SubResource("Resource_jad2d"),
-&"vertex_index": SubResource("Resource_6eu5u")
-}
-
 [sub_resource type="Resource" id="Resource_54308"]
 script = ExtResource("5_85g3d")
 data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -16701,11 +16570,8 @@ script = ExtResource("4_tipki")
 mesh_vector_data = SubResource("Resource_ejvmt")
 materials = Array[Material]([ExtResource("9_choun"), ExtResource("27_fv21b")])
 
-[node name="Block_87" type="Node3D" parent="Architexture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 1, -26.9)
-script = ExtResource("4_tipki")
-mesh_vector_data = SubResource("Resource_hhynb")
-materials = Array[Material]([ExtResource("31_chjal"), ExtResource("35_j2jfr")])
+[node name="Block_87" parent="Architexture" instance=ExtResource("26_ids8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09198, 1, -26.9)
 
 [node name="Block_89" type="Node3D" parent="Architexture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65, 0.3, -12.55)
@@ -17028,12 +16894,10 @@ texture = ExtResource("23_pm3ni")
 
 [node name="EnemyLawyer3" parent="ScriptedSpawn0" instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.99759, 0, 0.0693909, 0, 1, 0, -0.0693909, 0, -0.99759, -2.66501, 1.00365, -13.1762)
-walk_for_seconds = 1.0
 walking_speed = 2.0
 
 [node name="EnemyLawyer4" parent="ScriptedSpawn0" instance=ExtResource("25_og1vs")]
 transform = Transform3D(0.999875, 0, 0.0157597, 0, 1, 0, -0.0157597, 0, 0.999875, -2.61535, 1.00365, -8.9972)
-walk_for_seconds = 1.0
 walking_speed = 2.0
 
 [node name="KickedDoor" parent="ScriptedSpawn0" instance=ExtResource("38_pibwh")]
@@ -17092,7 +16956,6 @@ delay = 5.0
 
 [node name="EnemyLawyer6" parent="Node" instance=ExtResource("25_og1vs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.56182, 1.00812, -28.7121)
-walk_for_seconds = 1.0
 
 [node name="EnemyLawyer7" parent="Node" instance=ExtResource("25_og1vs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.56182, 1.00812, -29.3827)
@@ -17205,11 +17068,9 @@ omni_range = 10.839
 
 [node name="EnemyLawyer" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.936959, 0, -0.349439, 0, 1, 0, 0.349439, 0, -0.936959, -7.99645, 1.00365, -7.21725)
-walk_for_seconds = 1.0
 
 [node name="EnemyLawyer2" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.997754, 0, 0.066988, 0, 1, 0, -0.066988, 0, -0.997754, -6.88789, 1.00365, -7.21731)
-walk_for_seconds = 1.0
 
 [node name="Door6" parent="." instance=ExtResource("32_fuf3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1229, 1.00139, -16.2324)
@@ -17277,7 +17138,6 @@ spot_range = 14.5172
 [node name="EnemyLawyerRanged" parent="." instance=ExtResource("33_5q0nq")]
 transform = Transform3D(0.0555078, 0, 0.998458, 0, 1, 0, -0.998458, 0, 0.0555078, 1.54593, 1.00365, -11.1181)
 collision_mask = 1
-walk_for_seconds = 1.0
 hp = 8
 walking_speed = 2.0
 
@@ -17470,19 +17330,15 @@ texture = ExtResource("43_chjal")
 
 [node name="EnemyLawyer3" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.382087, 0, -0.924126, 0, 1, 0, 0.924126, 0, -0.382087, 0.531895, 1.00357, -16.5645)
-walk_for_seconds = 1.0
 
 [node name="EnemyLawyer5" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(-0.986999, 0, -0.160725, 0, 1, 0, 0.160725, 0, -0.986999, 0.531895, 1.00357, -20.0866)
-walk_for_seconds = 1.0
 
 [node name="EnemyLawyer4" parent="." instance=ExtResource("25_og1vs")]
 transform = Transform3D(0.311771, 0, -0.950157, 0, 1, 0, 0.950157, 0, 0.311771, -0.0754895, 1.00357, -15.1122)
-walk_for_seconds = 1.0
 
 [node name="EnemyLawyerRanged2" parent="." instance=ExtResource("33_5q0nq")]
 transform = Transform3D(-1, 0, 0.000279339, 0, 1, 0, -0.000279339, 0, -1, 0.476599, 1.00357, -24.1086)
-walk_for_seconds = 1.0
 
 [node name="CokeCan4" parent="." instance=ExtResource("48_bjg73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10577, 1.1452, -26.6115)
