@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bqeui4c6t5e7c"]
+
+[ext_resource type="FontFile" uid="uid://c1yvyujfpwjmc" path="res://fonts/Times New Roman.ttf" id="1_2m3lg"]
+
+[resource]
+default_font = ExtResource("1_2m3lg")
+default_font_size = 40
+RichTextLabel/colors/default_color = Color(1, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 2

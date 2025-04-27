@@ -1,4 +1,4 @@
-[gd_scene load_steps=690 format=3 uid="uid://dwaoqxhcdttrq"]
+[gd_scene load_steps=693 format=3 uid="uid://dwaoqxhcdttrq"]
 
 [ext_resource type="Script" uid="uid://beigiytpsttqg" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_b4j7a"]
 [ext_resource type="Script" uid="uid://ovmc3850uj71" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_wo48x"]
@@ -21,11 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://d2dqxbltxp0gw" path="res://objects/lobby_light_turn_off.tscn" id="16_vwfin"]
 [ext_resource type="Script" uid="uid://dntie1yqgx83l" path="res://scripts/scripted_spawns_trigger.gd" id="18_va6c3"]
 [ext_resource type="PackedScene" uid="uid://b0t7akkvlb8s5" path="res://objects/enemy_lawyer.tscn" id="19_bv48q"]
+[ext_resource type="PackedScene" uid="uid://cb2iqq04iodw" path="res://objects/dialogue_player.tscn" id="20_45kkt"]
 [ext_resource type="PackedScene" uid="uid://dtobu4t16ibjd" path="res://objects/kicked_door.tscn" id="20_k6a82"]
 [ext_resource type="PackedScene" uid="uid://cx1rkq4x6uoi4" path="res://objects/enemy_lawyer_ranged.tscn" id="20_k22d5"]
 [ext_resource type="Texture2D" uid="uid://bfycunk416768" path="res://sprites/rain.png" id="21_1sb0y"]
+[ext_resource type="AudioStream" uid="uid://cqnnd7wmmb0u3" path="res://sounds/cutscenes/villain_level2_speech.mp3" id="21_7egwj"]
 [ext_resource type="Script" uid="uid://cndp6bcj161ew" path="res://scenes/scripted_kill_count_trigger.gd" id="21_73m23"]
 [ext_resource type="PackedScene" uid="uid://qbnk4cgci2j" path="res://objects/logo.tscn" id="22_73m23"]
+[ext_resource type="Theme" uid="uid://bqeui4c6t5e7c" path="res://themes/villain_dialogue.tres" id="22_nquw4"]
 [ext_resource type="Script" uid="uid://btihk323vpd3h" path="res://scripts/animated_sprite_3d_autoplay.gd" id="22_vhnap"]
 [ext_resource type="AudioStream" uid="uid://xeyfs726grsj" path="res://sounds/rain.mp3" id="23_vhnap"]
 [ext_resource type="PackedScene" uid="uid://dwmwt6ualv3mh" path="res://objects/elevator_button_off.tscn" id="24_vwfin"]
@@ -7002,8 +7005,14 @@ delay = 5.0
 
 [node name="ScriptedSpawnsTrigger" type="Node" parent="ScriptedSpawn0" node_paths=PackedStringArray("animation_objects", "enemies")]
 script = ExtResource("18_va6c3")
-animation_objects = [NodePath("../LobbyLightTurnOff1"), NodePath("../LobbyLightTurnOff2"), NodePath("../LobbyLightTurnOff3"), NodePath("../LobbyLightTurnOn1"), NodePath("../LobbyLightTurnOn2"), NodePath("../LobbyLightTurnOn3"), NodePath("../KickedDoor"), NodePath("../KickedDoor5"), NodePath("../KickedDoor6"), NodePath("../KickedDoor7"), NodePath("../KickedDoor8"), NodePath("../KickedDoor2"), NodePath("../KickedDoor3"), NodePath("../KickedDoor4")]
+animation_objects = [NodePath("../LobbyLightTurnOff1"), NodePath("../LobbyLightTurnOff2"), NodePath("../LobbyLightTurnOff3"), NodePath("../LobbyLightTurnOn1"), NodePath("../LobbyLightTurnOn2"), NodePath("../LobbyLightTurnOn3"), NodePath("../KickedDoor"), NodePath("../KickedDoor5"), NodePath("../KickedDoor6"), NodePath("../KickedDoor7"), NodePath("../KickedDoor8"), NodePath("../KickedDoor2"), NodePath("../KickedDoor3"), NodePath("../KickedDoor4"), NodePath("../DialoguePlayer")]
 enemies = [NodePath("../EnemyLawyer"), NodePath("../EnemyLawyer4"), NodePath("../EnemyLawyer5"), NodePath("../EnemyLawyerRanged3"), NodePath("../EnemyLawyer2"), NodePath("../EnemyLawyerRanged4"), NodePath("../EnemyLawyerRanged"), NodePath("../EnemyLawyerRanged2")]
+
+[node name="DialoguePlayer" parent="ScriptedSpawn0" instance=ExtResource("20_45kkt")]
+text = "I expected better judgement from you. Thought you'd have the sense not to follow me here. Well, seems I overestimated you."
+stream = ExtResource("21_7egwj")
+theme = ExtResource("22_nquw4")
+delay = 1.0
 
 [node name="ElevatorScripting" type="Node" parent="."]
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb2iqq04iodw"]
+
+[ext_resource type="Script" uid="uid://cu48lt0c66ilq" path="res://scripts/dialogue_player.gd" id="1_drxdn"]
+[ext_resource type="Theme" uid="uid://dn2pmtviyreha" path="res://themes/player_dialogue.tres" id="2_c18df"]
+
+[node name="DialoguePlayer" type="Node"]
+script = ExtResource("1_drxdn")
+metadata/_custom_type_script = "uid://4gespp8m1giw"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 116.0
+grow_horizontal = 2
+theme = ExtResource("2_c18df")
+bbcode_enabled = true
+text = "Placeholder"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

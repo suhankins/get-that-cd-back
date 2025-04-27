@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dn2pmtviyreha"]
+
+[ext_resource type="FontFile" uid="uid://bupnmekpmdch6" path="res://fonts/pixel.ttf" id="1_r8lty"]
+
+[resource]
+default_font = ExtResource("1_r8lty")
+default_font_size = 40
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 2
