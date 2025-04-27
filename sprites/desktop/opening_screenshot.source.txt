@@ -1,0 +1,6 @@
+UI
+https://discmaster.textfiles.com/view/17600/ftp.cray.com.zip/ftp.cray.com/pub/smw/3.1.06.tar.gz/3.1.GA.tar/3.1.GA/Cray-ULC10SP1-080714.iso/suse/noarch/kde3-i18n-pl-3.5.1-0.6.noarch.rpm/kde3-i18n-pl-3.5.1.0.6.cpio.bz2/kde3-i18n-pl-3.5.1.0.6.cpio/opt/kde3/share/doc/HTML/pl/khelpcenter/userguide/desktop.png
+Window
+https://discmaster.textfiles.com/view/12128/FreelogMagazineJuilletAout2014-No121.iso/Educatif/StarDict/StarDict.exe/StarDict/Bin/StarDict/help/C/figures/stardict_main_window.png
+Font
+https://discmaster.textfiles.com/view/30177/pc%20play%20129.iso/cijele/pyweek/pyweek.exe/PyWeek8_56/BREGMAAA/bregma.zip/bregma/images/pixel.ttf

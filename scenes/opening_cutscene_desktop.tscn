@@ -1,0 +1,227 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhiuwymcgssv0"]
+
+[ext_resource type="Texture2D" uid="uid://bcliw5dckht4m" path="res://sprites/desktop/bottom_center.png" id="1_okgmm"]
+[ext_resource type="Texture2D" uid="uid://cffab0dvqppnc" path="res://sprites/desktop/background.png" id="1_q57q7"]
+[ext_resource type="Texture2D" uid="uid://cm2dvlwkme131" path="res://sprites/desktop/bottom_left.png" id="1_qixer"]
+[ext_resource type="Script" uid="uid://4gespp8m1giw" path="res://scripts/animation_object.gd" id="1_sjfed"]
+[ext_resource type="Texture2D" uid="uid://b5t3qrjcg358v" path="res://sprites/desktop/bottom_right.png" id="3_q57q7"]
+[ext_resource type="Texture2D" uid="uid://6ubje5xohkv" path="res://sprites/desktop/stardict_main_window.png" id="5_lglrb"]
+[ext_resource type="FontFile" uid="uid://bupnmekpmdch6" path="res://fonts/pixel.ttf" id="6_mc108"]
+[ext_resource type="AudioStream" uid="uid://bygic81qxfjnl" path="res://sounds/Message.mp3" id="7_duqfg"]
+[ext_resource type="AudioStream" uid="uid://dcghdfmaissut" path="res://sounds/keyboard.mp3" id="8_lqxek"]
+
+[sub_resource type="Animation" id="Animation_mc108"]
+resource_name = "play_opening_chat"
+length = 15.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_duqfg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_lqxek")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_duqfg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_lqxek")
+}],
+"times": PackedFloat32Array(1, 2.5, 5.5, 7.5)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatWindow/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3.86667, 5.5, 8.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "[color=#3d9e2e]<Fren>[/color] hey, have you seen that video about Total Awesomesauce?????
+", "[color=#3d9e2e]<Fren>[/color] hey, have you seen that video about Total Awesomesauce?????
+[color=#ff0000]<You>[/color] hell yeah, that game is fire!", "[color=#3d9e2e]<Fren>[/color] hey, have you seen that video about Total Awesomesauce?????
+[color=#ff0000]<You>[/color] hell yeah, that game is fire!
+[color=#3d9e2e]<Fren>[/color] aw man, i wish I could play it, but it's not available for sale anymore", "[color=#3d9e2e]<Fren>[/color] hey, have you seen that video about Total Awesomesauce?????
+[color=#ff0000]<You>[/color] hell yeah, that game is fire!
+[color=#3d9e2e]<Fren>[/color] aw man, i wish I could play it, but it's not available for sale anymore
+[color=#ff0000]<You>[/color] i actually have a copy. hold on, i'll send you the files"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatWindow/FrenIsTyping:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1, 4.5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_lqxek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatWindow/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatWindow/FrenIsTyping:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_duqfg"]
+_data = {
+&"RESET": SubResource("Animation_lqxek"),
+&"play_opening_chat": SubResource("Animation_mc108")
+}
+
+[node name="OpeningCutsceneDesktop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sjfed")
+animation_name = &"play_opening_chat"
+play_on_ready = true
+delay = 1.0
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_q57q7")
+
+[node name="ToolbarBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_okgmm")
+
+[node name="BottomLeftCornerToolbar" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+offset_right = 286.0
+grow_vertical = 0
+texture = ExtResource("1_qixer")
+
+[node name="BottomRightCornerToolbar" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_q57q7")
+
+[node name="ChatWindow" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -379.0
+offset_top = -246.0
+offset_right = 416.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_lglrb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatWindow"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.345
+anchor_top = 0.185
+anchor_right = 0.956
+anchor_bottom = 0.889
+offset_left = 3.72498
+offset_top = 7.05
+offset_right = -5.02002
+offset_bottom = -4.83002
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_mc108")
+bbcode_enabled = true
+shortcut_keys_enabled = false
+
+[node name="FrenIsTyping" type="RichTextLabel" parent="ChatWindow"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.345
+anchor_top = 0.921
+anchor_right = 0.814
+anchor_bottom = 0.97
+offset_left = -0.275024
+offset_top = 0.129974
+offset_right = -0.130005
+offset_bottom = 0.0999756
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_mc108")
+bbcode_enabled = true
+text = "Fren is typing..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_duqfg")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
