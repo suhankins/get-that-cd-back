@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://1kgfsvciufel"]
+
+[ext_resource type="Texture2D" uid="uid://cffab0dvqppnc" path="res://sprites/desktop/background.png" id="1_4313b"]
+[ext_resource type="Texture2D" uid="uid://bcliw5dckht4m" path="res://sprites/desktop/bottom_center.png" id="2_qpc4k"]
+[ext_resource type="Texture2D" uid="uid://cm2dvlwkme131" path="res://sprites/desktop/bottom_left.png" id="3_wj6lj"]
+[ext_resource type="Texture2D" uid="uid://b5t3qrjcg358v" path="res://sprites/desktop/bottom_right.png" id="4_nm5sb"]
+[ext_resource type="Texture2D" uid="uid://iyobd3knl1gf" path="res://sprites/desktop/total_awesomesauce_window.png" id="5_5nntc"]
+[ext_resource type="AudioStream" uid="uid://bugorceliy68l" path="res://sounds/final_screen_song.mp3" id="5_nm5sb"]
+[ext_resource type="FontFile" uid="uid://bn68uumtyruqh" path="res://fonts/DejaVuSans-BoldOblique.ttf" id="6_o2gku"]
+[ext_resource type="SpriteFrames" uid="uid://bwhxfctp3dcqk" path="res://objects/explosion_spriteframes.tres" id="6_wj6lj"]
+[ext_resource type="Script" uid="uid://dpeyp6bqa74kg" path="res://scenes/animated_sprite_2d_autoplay.gd" id="7_wj6lj"]
+
+[node name="EndingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4313b")
+
+[node name="ToolbarBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_qpc4k")
+
+[node name="BottomLeftCornerToolbar" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+offset_right = 286.0
+grow_vertical = 0
+texture = ExtResource("3_wj6lj")
+
+[node name="BottomRightCornerToolbar" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_nm5sb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nm5sb")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = -0.035
+anchor_right = 1.0
+anchor_bottom = 0.936
+offset_left = 0.599976
+offset_top = 91.2
+offset_right = -26.0
+offset_bottom = -229.92
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_5nntc")
+expand_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+texture_filter = 1
+position = Vector2(280.625, 174.5)
+rotation = -0.287979
+scale = Vector2(2.3097, 2.34091)
+sprite_frames = ExtResource("6_wj6lj")
+speed_scale = 3.0
+script = ExtResource("7_wj6lj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.947
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 605.0
+offset_bottom = -0.840027
+theme_override_fonts/normal_font = ExtResource("6_o2gku")
+bbcode_enabled = true
+text = "[font_size=30px]GAME BY[/font_size]
+[font_size=40px]PUNISHED BERNADETTA[/font_size]
+[font_size=20px]https://detta.dev/[/font_size]
+
+[font_size=30px]VOICE ACTING BY[/font_size]
+[font_size=40px]WHOEVER AGREES[/font_size]
+
+[font_size=30px]WITH HELP FROM[/font_size]
+[font_size=40px]BLAHAJFISH[/font_size]
+
+[font_size=30px]MADE FOR[/font_size]
+[font_size=40px]DISCMASTER JAM[/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="frame_changed" from="TextureRect/AnimatedSprite2D" to="TextureRect/AnimatedSprite2D" method="_on_frame_changed"]
