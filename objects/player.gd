@@ -44,6 +44,9 @@ signal health_updated
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	rotation_target.x = camera.global_rotation.x
+	rotation_target.y = camera.global_rotation.y
+	rotation_target.z = camera.global_rotation.z
 
 func _physics_process(delta):
 	
