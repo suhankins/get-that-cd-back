@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwubo7ps852bp"]
+
+[ext_resource type="Script" uid="uid://cka26fryduv5l" path="res://scripts/put_cd_in_player_hand.gd" id="1_iaw8t"]
+
+[node name="PutCDInPlayerHand" type="Node3D"]
+script = ExtResource("1_iaw8t")

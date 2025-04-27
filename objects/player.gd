@@ -9,8 +9,10 @@ class_name Player extends CharacterBody3D
 @export var land_punch_sound: AudioStream
 
 
+@onready var hand_holding_cd: TextureRect = $"Fists/HandHoldingCD"
 @onready var fists: Array[Fist] = [$"Fists/LeftFist", $"Fists/RightFist"]
 var last_fist_thrown: int = 0
+var can_attack = true
 
 var mouse_sensitivity = 700
 var gamepad_sensitivity := 0.075
@@ -137,9 +139,21 @@ func handle_gravity(delta):
 		
 		gravity = 0
 
+
+func take_cd():
+	can_attack = false
+	for fist in fists:
+		fist.hide()
+	hand_holding_cd.show()
+
+func drop_cd():
+	hand_holding_cd.hide()
+
 # Shooting
 
 func action_shoot():
+	if (!can_attack):
+		return
 	if Input.is_action_pressed("shoot"):
 		if (punch_cooldown.time_left > 0):
 			return

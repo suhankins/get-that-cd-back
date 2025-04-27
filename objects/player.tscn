@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=12 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" uid="uid://u2ar6dw7cvog" path="res://objects/player.gd" id="1_ffboj"]
 [ext_resource type="AudioStream" uid="uid://bhhp12ptb6g4x" path="res://sounds/swish_punch.mp3" id="2_3rfka"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dlnmyvj2atiyy" path="res://sprites/fist/fist_1.png" id="6_3rerk"]
 [ext_resource type="Texture2D" uid="uid://cmd63srshftqg" path="res://sprites/fist/fist_0.png" id="7_i825w"]
 [ext_resource type="Script" uid="uid://dw4nhcmo58ul" path="res://scripts/fist.gd" id="8_3rfka"]
+[ext_resource type="Texture2D" uid="uid://7ljf8rvjrrya" path="res://sprites/fist/left_hand_holding_cd.png" id="8_4vq5b"]
 [ext_resource type="Texture2D" uid="uid://gwe0vigucb37" path="res://sprites/black_coat.png" id="8_i8sra"]
 [ext_resource type="Script" uid="uid://t7ax76qsc0t6" path="res://scripts/debug_only.gd" id="9_4vq5b"]
 
@@ -100,6 +101,24 @@ punch_frame = ExtResource("6_3rerk")
 [node name="Cooldown" type="Timer" parent="Fists/RightFist"]
 wait_time = 0.25
 one_shot = true
+
+[node name="HandHoldingCD" type="TextureRect" parent="Fists"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_top = -350.0
+offset_right = -27.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(215, 237)
+texture = ExtResource("8_4vq5b")
 
 [node name="PunchCooldown" type="Timer" parent="."]
 wait_time = 0.3

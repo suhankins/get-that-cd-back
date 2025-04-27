@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgcxkpk3hsit7"]
+
+[ext_resource type="Script" uid="uid://dgywwdjsntrwf" path="res://scripts/breakable_prop.gd" id="1_c4i3n"]
+[ext_resource type="Texture2D" uid="uid://b8j751dh7mh5r" path="res://sprites/total_awesomesauce_cd.png" id="2_7vggb"]
+[ext_resource type="PackedScene" uid="uid://cwubo7ps852bp" path="res://objects/put_cd_in_player_hand.tscn" id="2_31fk5"]
+[ext_resource type="Texture2D" uid="uid://15is543gufx1" path="res://sprites/aic_glow.png" id="4_sbuaq"]
+[ext_resource type="Script" uid="uid://4gespp8m1giw" path="res://scripts/animation_object.gd" id="5_rl01a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7vggb"]
+size = Vector3(0.3, 0.304382, 0.3)
+
+[sub_resource type="Animation" id="Animation_sbuaq"]
+resource_name = "oscilate"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(3.36359, 3.36359, 3.36359),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rl01a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75g4s"]
+_data = {
+&"RESET": SubResource("Animation_rl01a"),
+&"oscilate": SubResource("Animation_sbuaq")
+}
+
+[node name="TotalAwesomesauceCD" type="Area3D"]
+monitoring = false
+monitorable = false
+script = ExtResource("1_c4i3n")
+hp = 1
+explosion_scene = ExtResource("2_31fk5")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.01, 0)
+pixel_size = 0.0015
+texture = ExtResource("2_7vggb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152679, 0)
+shape = SubResource("BoxShape3D_7vggb")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121481, 0)
+pixel_size = 0.005
+billboard = 1
+double_sided = false
+texture = ExtResource("4_sbuaq")
+script = ExtResource("5_rl01a")
+animation_name = &"oscilate"
+play_on_ready = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D2"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_75g4s")
+}
