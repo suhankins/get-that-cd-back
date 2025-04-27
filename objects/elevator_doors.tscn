@@ -68,6 +68,33 @@ shadow_mesh = SubResource("ArrayMesh_ql4bi")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7ug7s"]
 points = PackedVector3Array(-0.1, 0, 0, -0.1, 0, 0.199999, -0.1, 1.8, 0, 0.7, 0, 0, 0.7, 0, 0.199999, -0.1, 1.8, 0.199999, 0.7, 1.8, 0, 0.7, 1.8, 0.199999)
 
+[sub_resource type="Animation" id="Animation_ql4bi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Block_17_mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Block_46_mesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_2g6bs"]
 resource_name = "open"
 length = 2.5
@@ -111,33 +138,6 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/2/use_blend = true
-
-[sub_resource type="Animation" id="Animation_ql4bi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Block_17_mesh:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Block_46_mesh:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.7, 0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ql4bi"]
 _data = {

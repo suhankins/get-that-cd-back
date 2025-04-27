@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0gj54vhk4k6l"]
+
+[ext_resource type="Texture2D" uid="uid://b2ogevmy2gkch" path="res://models/Textures/Masonry.Stone.Ashlar.Random.Broken Coursed.png" id="1_xc7wm"]
+
+[resource]
+albedo_texture = ExtResource("1_xc7wm")
+metallic_specular = 0.0

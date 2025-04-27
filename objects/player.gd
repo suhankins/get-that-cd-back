@@ -82,10 +82,6 @@ func _physics_process(delta):
 	camera.position.y = lerp(camera.position.y, 0.0, delta * 5)
 	
 	if is_on_floor() and gravity > 1 and !previously_floored: # Landed
-		if (tween != null):
-			tween.kill()
-		tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_LINEAR)
-		tween.tween_property(fists_container, "position:y", 0, 0.1)
 		camera.position.y = -0.1
 	
 	previously_floored = is_on_floor()
@@ -147,10 +143,6 @@ func action_shoot():
 	if Input.is_action_pressed("shoot"):
 		if (punch_cooldown.time_left > 0):
 			return
-		if (tween != null):
-			tween.kill()
-			tween = null
-		fists_container.position.y = 0
 		fists[last_fist_thrown].throw_punch()
 		last_fist_thrown += 1
 		if (last_fist_thrown >= fists.size()):

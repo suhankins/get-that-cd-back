@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3vg00kuvtygc"
-path.s3tc="res://.godot/imported/SiteWork.Planting.Grass.Bermuda1.jpg-8957e04d3c7e709fb5dd300449ff0f88.s3tc.ctex"
+uid="uid://xvnbi2kvcthw"
+path.s3tc="res://.godot/imported/shrub.png-b6eb97d24b74a7b124b8e96eb2b5f729.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/Textures/SiteWork.Planting.Grass.Bermuda1.jpg"
-dest_files=["res://.godot/imported/SiteWork.Planting.Grass.Bermuda1.jpg-8957e04d3c7e709fb5dd300449ff0f88.s3tc.ctex"]
+source_file="res://sprites/shrub.png"
+dest_files=["res://.godot/imported/shrub.png-b6eb97d24b74a7b124b8e96eb2b5f729.s3tc.ctex"]
 
 [params]
 

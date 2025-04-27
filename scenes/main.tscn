@@ -1,4 +1,4 @@
-[gd_scene load_steps=1646 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=1647 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://gwe0vigucb37" path="res://sprites/black_coat.png" id="42_ty1g6"]
 [ext_resource type="Texture2D" uid="uid://bj1u0luk1wlpo" path="res://models/Textures/glass_blue_tm.png" id="43_chjal"]
 [ext_resource type="PackedScene" uid="uid://eawfuepwr5k7" path="res://objects/breaking_light.tscn" id="43_vchkt"]
+[ext_resource type="PackedScene" uid="uid://ddrsi7aykimct" path="res://objects/door_number.tscn" id="46_ids8r"]
 [ext_resource type="PackedScene" uid="uid://bijow716c6nl6" path="res://objects/coke_can.tscn" id="48_bjg73"]
 [ext_resource type="Texture2D" uid="uid://cs3ofsun7utau" path="res://sprites/skid.png" id="51_bjg73"]
 [ext_resource type="PackedScene" uid="uid://bih7otjojyuey" path="res://objects/opening_door.tscn" id="52_bu4jf"]
@@ -17095,7 +17096,7 @@ walk_for_seconds = 1.0
 
 [node name="EnemyLawyer7" parent="Node" instance=ExtResource("25_og1vs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.56182, 1.00812, -29.3827)
-walk_for_seconds = 1.0
+walk_for_seconds = 0.5
 
 [node name="Trigger" type="Area3D" parent="Node" node_paths=PackedStringArray("enemies")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.17021, 1.48678, -25.9854)
@@ -17280,12 +17281,8 @@ walk_for_seconds = 1.0
 hp = 8
 walking_speed = 2.0
 
-[node name="DoorNumber" type="Sprite3D" parent="."]
+[node name="DoorNumber" parent="." instance=ExtResource("46_ids8r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89592, 2.31092, -9.50044)
-flip_h = true
-pixel_size = 0.005
-shaded = true
-texture = ExtResource("34_dgi5k")
 
 [node name="DoorNumber2" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89592, 2.31092, -12.4936)

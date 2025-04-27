@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://qbnk4cgci2j"]
+
+[ext_resource type="Texture2D" uid="uid://b3qnsfe08papk" path="res://sprites/corporation_logo.png" id="1_0wkrq"]
+
+[node name="Logo" type="Sprite3D"]
+pixel_size = 0.04
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_0wkrq")

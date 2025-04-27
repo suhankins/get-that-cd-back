@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddrsi7aykimct"]
+
+[ext_resource type="Texture2D" uid="uid://c3vfqn2ghof8n" path="res://models/Textures/door_number.jpg" id="1_ptsjc"]
+
+[node name="DoorNumber" type="Sprite3D"]
+flip_h = true
+pixel_size = 0.005
+shaded = true
+texture = ExtResource("1_ptsjc")

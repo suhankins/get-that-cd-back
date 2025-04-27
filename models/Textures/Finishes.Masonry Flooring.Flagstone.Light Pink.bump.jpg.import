@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3vg00kuvtygc"
-path.s3tc="res://.godot/imported/SiteWork.Planting.Grass.Bermuda1.jpg-8957e04d3c7e709fb5dd300449ff0f88.s3tc.ctex"
+uid="uid://nrtw56is7ggc"
+path.s3tc="res://.godot/imported/Finishes.Masonry Flooring.Flagstone.Light Pink.bump.jpg-63c9991b8e069b309e0f57509b88056f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/Textures/SiteWork.Planting.Grass.Bermuda1.jpg"
-dest_files=["res://.godot/imported/SiteWork.Planting.Grass.Bermuda1.jpg-8957e04d3c7e709fb5dd300449ff0f88.s3tc.ctex"]
+source_file="res://models/Textures/Finishes.Masonry Flooring.Flagstone.Light Pink.bump.jpg"
+dest_files=["res://.godot/imported/Finishes.Masonry Flooring.Flagstone.Light Pink.bump.jpg-63c9991b8e069b309e0f57509b88056f.s3tc.ctex"]
 
 [params]
 

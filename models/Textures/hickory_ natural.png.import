@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3vg00kuvtygc"
-path.s3tc="res://.godot/imported/SiteWork.Planting.Grass.Bermuda1.jpg-8957e04d3c7e709fb5dd300449ff0f88.s3tc.ctex"
+uid="uid://cwvj1pm6vvj2t"
+path.s3tc="res://.godot/imported/hickory_ natural.png-104450aaea2a7ff89c9acb85533f5af4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/Textures/SiteWork.Planting.Grass.Bermuda1.jpg"
-dest_files=["res://.godot/imported/SiteWork.Planting.Grass.Bermuda1.jpg-8957e04d3c7e709fb5dd300449ff0f88.s3tc.ctex"]
+source_file="res://models/Textures/hickory_ natural.png"
+dest_files=["res://.godot/imported/hickory_ natural.png-104450aaea2a7ff89c9acb85533f5af4.s3tc.ctex"]
 
 [params]
 
