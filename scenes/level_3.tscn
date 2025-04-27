@@ -7556,7 +7556,7 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -2.14851
 [node name="ScriptedSceneFinal" type="Node" parent="."]
 
 [node name="FinalDoor" parent="ScriptedSceneFinal" instance=ExtResource("20_mnu1b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6.535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6.54)
 
 [node name="Lawyer" parent="ScriptedSceneFinal" instance=ExtResource("40_1ke33")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.76818, 1.20152, -6.34943)
