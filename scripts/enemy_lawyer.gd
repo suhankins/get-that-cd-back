@@ -3,7 +3,7 @@ class_name Enemy extends CharacterBody3D
 
 @onready var animation_player: AnimationPlayer = $Lawyer/AnimationPlayer
 @onready var vision_raycast: RayCast3D = $VisionRaycast
-@onready var player: Player = get_tree().get_nodes_in_group('player')[0]
+@onready var player: Player = get_tree().get_first_node_in_group('player')
 @onready var time_to_hit_timer: Timer = $TimeToHit
 @onready var time_to_change_state_timer: Timer = $TimerToChangeState
 @onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
@@ -60,7 +60,10 @@ signal died
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-	
+	if (!is_instance_valid(player)):
+		# After level transition on ready NPCs get old player instance instead of new one
+		player = get_tree().get_first_node_in_group('player')
+		return
 	if (state == STATE.DEAD or state == STATE.WAITING_TO_WALK_A_FEW_METERS):
 		return
 	if (state == STATE.UNALERTED):

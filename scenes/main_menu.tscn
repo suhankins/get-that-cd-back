@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c56qqdc1547qd"]
+[gd_scene load_steps=43 format=3 uid="uid://c56qqdc1547qd"]
 
 [ext_resource type="PackedScene" uid="uid://bb8pmrrodfde0" path="res://models/b1_skyscraper.glb" id="1_5dd4i"]
 [ext_resource type="Script" uid="uid://beigiytpsttqg" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="2_lgwnu"]
@@ -16,7 +16,10 @@
 [ext_resource type="Script" uid="uid://btihk323vpd3h" path="res://scripts/animated_sprite_3d_autoplay.gd" id="14_7b55j"]
 [ext_resource type="Script" uid="uid://dlmuqj6jtu5il" path="res://scripts/spin.gd" id="15_7b55j"]
 [ext_resource type="FontFile" uid="uid://bn68uumtyruqh" path="res://fonts/DejaVuSans-BoldOblique.ttf" id="16_5pajh"]
+[ext_resource type="Script" uid="uid://6ne203iwjv52" path="res://scripts/start_button.gd" id="17_a8gd2"]
+[ext_resource type="Theme" path="res://themes/main_theme.tres" id="17_hstxw"]
 [ext_resource type="Script" uid="uid://d1dsfu4orqc6t" path="res://scripts/exit_button.gd" id="17_j7ex8"]
+[ext_resource type="AudioStream" uid="uid://cicim0a5xkiip" path="res://sounds/Main Menu Theme.mp3" id="20_8egab"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7b55j"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -199,27 +202,6 @@ font_size = 64
 [sub_resource type="LabelSettings" id="LabelSettings_5pajh"]
 font = ExtResource("16_5pajh")
 font_size = 24
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pajh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7ex8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hstxw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8egab"]
-
-[sub_resource type="Theme" id="Theme_gw5y6"]
-default_font = ExtResource("16_5pajh")
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(0.423529, 0.94902, 0.94902, 1)
-Button/font_sizes/font_size = 48
-Button/styles/disabled = SubResource("StyleBoxEmpty_5pajh")
-Button/styles/focus = SubResource("StyleBoxEmpty_j7ex8")
-Button/styles/hover = SubResource("StyleBoxEmpty_a8gd2")
-Button/styles/normal = SubResource("StyleBoxEmpty_hstxw")
-Button/styles/pressed = SubResource("StyleBoxEmpty_8egab")
 
 [node name="MainMenu" type="Node3D"]
 
@@ -883,9 +865,10 @@ offset_left = 23.0
 offset_top = -25.0
 offset_right = 70.0
 offset_bottom = 6.0
-theme = SubResource("Theme_gw5y6")
+theme = ExtResource("17_hstxw")
 text = "PLAY"
 alignment = 0
+script = ExtResource("17_a8gd2")
 
 [node name="Button2" type="Button" parent="Control"]
 layout_mode = 0
@@ -893,11 +876,16 @@ offset_left = 23.0
 offset_top = 31.0
 offset_right = 143.0
 offset_bottom = 88.0
-theme = SubResource("Theme_gw5y6")
+theme = ExtResource("17_hstxw")
 text = "EXIT"
 alignment = 0
 script = ExtResource("17_j7ex8")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_8egab")
+autoplay = true
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/Button2" to="Control/Button2" method="_on_pressed"]
 
 [editable path="in2"]

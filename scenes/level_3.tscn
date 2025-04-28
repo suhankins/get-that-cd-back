@@ -1,4 +1,4 @@
-[gd_scene load_steps=707 format=3 uid="uid://bq7n21n7bg4iq"]
+[gd_scene load_steps=709 format=3 uid="uid://bq7n21n7bg4iq"]
 
 [ext_resource type="PackedScene" uid="uid://bj52a7edcuqjv" path="res://objects/elevator_doors.tscn" id="1_ha73p"]
 [ext_resource type="PackedScene" uid="uid://c0ehiynfqnrjt" path="res://objects/elevator_button_on.tscn" id="2_vcx5n"]
@@ -50,6 +50,7 @@
 [ext_resource type="Theme" uid="uid://bqeui4c6t5e7c" path="res://themes/villain_dialogue.tres" id="47_kmaj6"]
 [ext_resource type="AudioStream" uid="uid://bn8g5grx7w7ww" path="res://sounds/cutscenes/villain_take_your_cd.mp3" id="48_12f7l"]
 [ext_resource type="AudioStream" uid="uid://d7rjelwm2480" path="res://sounds/cutscenes/mc_i_hope_ill_never_see_you_again.mp3" id="50_12f7l"]
+[ext_resource type="PackedScene" uid="uid://dcrv6soylfwiw" path="res://objects/level_transition.tscn" id="50_76odh"]
 [ext_resource type="Theme" uid="uid://dn2pmtviyreha" path="res://themes/player_dialogue.tres" id="51_76odh"]
 
 [sub_resource type="Resource" id="Resource_hree8"]
@@ -6633,6 +6634,9 @@ size = Vector3(1.04982, 1.39209, 8.3083)
 [sub_resource type="BoxShape3D" id="BoxShape3D_58p72"]
 size = Vector3(3.36041, 1.39209, 1.11972)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgc1e"]
+size = Vector3(1.02594, 1, 1)
+
 [node name="Level3" type="Node3D" groups=["level_root"]]
 
 [node name="ElevatorDoors" parent="." instance=ExtResource("1_ha73p")]
@@ -7588,6 +7592,20 @@ delay = 5.0
 [node name="TotalAwesomesauceCD" parent="." instance=ExtResource("45_hs0n0")]
 transform = Transform3D(-0.300356, 0, 0.953827, 0, 1, 0, -0.953827, 0, -0.300356, -3.96296, 1, -7.04305)
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.43126, 1.99862, -25.0734)
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0935974, 0, 0)
+shape = SubResource("BoxShape3D_xgc1e")
+
+[node name="LevelTransition" parent="." instance=ExtResource("50_76odh")]
+level_index = 4
+
 [node name="DialoguePlayer3" parent="." instance=ExtResource("45_7mmqb")]
 text = "I hope I'll never have to see you again."
 stream = ExtResource("50_12f7l")
@@ -7598,3 +7616,5 @@ delay = 0.5
 [connection signal="body_entered" from="ScriptedSpawn1/Area3D" to="ScriptedSpawn1/Area3D" method="_on_body_entered"]
 [connection signal="broke" from="ScriptedSceneFinal/FinalDoor" to="ScriptedSceneFinal/ScriptedSceneTrigger" method="_on_elevator_button_off_broke"]
 [connection signal="broke" from="TotalAwesomesauceCD" to="DialoguePlayer3" method="play_animation"]
+[connection signal="broke" from="TotalAwesomesauceCD" to="Area3D" method="set_monitoring" binds= [true]]
+[connection signal="body_entered" from="Area3D" to="LevelTransition" method="switch_level_with_one_argument"]

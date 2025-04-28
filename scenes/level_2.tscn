@@ -1,4 +1,4 @@
-[gd_scene load_steps=694 format=3 uid="uid://dwaoqxhcdttrq"]
+[gd_scene load_steps=695 format=3 uid="uid://dwaoqxhcdttrq"]
 
 [ext_resource type="Script" uid="uid://beigiytpsttqg" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_b4j7a"]
 [ext_resource type="Script" uid="uid://ovmc3850uj71" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_wo48x"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://cvc7g1o8cacf3" path="res://sounds/shutdown.mp3" id="23_nquw4"]
 [ext_resource type="AudioStream" uid="uid://xeyfs726grsj" path="res://sounds/rain.mp3" id="23_vhnap"]
 [ext_resource type="PackedScene" uid="uid://dwmwt6ualv3mh" path="res://objects/elevator_button_off.tscn" id="24_vwfin"]
+[ext_resource type="PackedScene" uid="uid://dcrv6soylfwiw" path="res://objects/level_transition.tscn" id="28_3buw8"]
 
 [sub_resource type="Resource" id="Resource_5o1fx"]
 script = ExtResource("2_wo48x")
@@ -7053,6 +7054,9 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("7_y0kc7")
 
+[node name="LevelTransition" parent="." instance=ExtResource("28_3buw8")]
+level_index = 3
+
 [node name="Window3" type="Sprite3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -3.82137e-15, 1, 4.37114e-08, 5.56083, 1.00904, -0.188446)
 shaded = true
@@ -7202,3 +7206,4 @@ spot_angle = 33.75
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.51628, 1.77916, -26.4953)
 
 [connection signal="broke" from="ScriptedSpawn0/ElevatorButtonOff" to="ScriptedSpawn0/ScriptedSpawnsTrigger" method="_on_elevator_button_off_broke"]
+[connection signal="broke" from="ElevatorButtonOff" to="LevelTransition" method="switch_level" flags=6]

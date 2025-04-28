@@ -1,3 +1,80 @@
-[gd_scene format=3 uid="uid://cw8md45e34wye"]
+[gd_scene load_steps=11 format=3 uid="uid://cw8md45e34wye"]
+
+[ext_resource type="Script" uid="uid://duvr5qtmlhxpx" path="res://scripts/level_switcher.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c56qqdc1547qd" path="res://scenes/main_menu.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dxvvlck8lej3f" path="res://scenes/level_1.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dwaoqxhcdttrq" path="res://scenes/level_2.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bq7n21n7bg4iq" path="res://scenes/level_3.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://1kgfsvciufel" path="res://scenes/ending_screen.tscn" id="6_o6xl0"]
+
+[sub_resource type="Animation" id="Animation_0wfyh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o5qli"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sugp2"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sugp2"]
+_data = {
+&"RESET": SubResource("Animation_0wfyh"),
+&"fade_in": SubResource("Animation_o5qli"),
+&"fade_out": SubResource("Animation_sugp2")
+}
 
 [node name="main" type="Node" groups=["game_root"]]
+script = ExtResource("1_o5qli")
+levels = Array[PackedScene]([ExtResource("2_jyhfs"), ExtResource("3_tbgi4"), ExtResource("4_tefeu"), ExtResource("5_tefeu"), ExtResource("6_o6xl0")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sugp2")
+}

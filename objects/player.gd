@@ -219,7 +219,7 @@ func damage(amount):
 	Audio.play_stream(hurt_sound)
 	
 	if health < 0:
-		get_tree().reload_current_scene() # Reset when out of health
+		get_tree().get_first_node_in_group("game_root").load_current_level()
 	else:
 		damaged_screen.show()
 		await get_tree().create_timer(0.5).timeout

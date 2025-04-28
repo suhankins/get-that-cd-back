@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://1kgfsvciufel"]
+[gd_scene load_steps=11 format=3 uid="uid://1kgfsvciufel"]
 
 [ext_resource type="Texture2D" uid="uid://cffab0dvqppnc" path="res://sprites/desktop/background.png" id="1_4313b"]
 [ext_resource type="Texture2D" uid="uid://bcliw5dckht4m" path="res://sprites/desktop/bottom_center.png" id="2_qpc4k"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bn68uumtyruqh" path="res://fonts/DejaVuSans-BoldOblique.ttf" id="6_o2gku"]
 [ext_resource type="SpriteFrames" uid="uid://bwhxfctp3dcqk" path="res://objects/explosion_spriteframes.tres" id="6_wj6lj"]
 [ext_resource type="Script" uid="uid://dpeyp6bqa74kg" path="res://scenes/animated_sprite_2d_autoplay.gd" id="7_wj6lj"]
+[ext_resource type="Theme" path="res://themes/main_theme.tres" id="10_5nntc"]
 
 [node name="EndingScreen" type="Control"]
 layout_mode = 3
@@ -112,12 +113,25 @@ text = "[font_size=30px]GAME BY[/font_size]
 [font_size=30px]VOICE ACTING BY[/font_size]
 [font_size=40px]WHOEVER AGREES[/font_size]
 
-[font_size=30px]WITH HELP FROM[/font_size]
-[font_size=40px]BLAHAJFISH[/font_size]
-
 [font_size=30px]MADE FOR[/font_size]
-[font_size=40px]DISCMASTER JAM[/font_size]"
+[font_size=40px]DISCMASTER JAM[/font_size]
+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.937
+anchor_right = 1.0
+anchor_bottom = 0.937
+offset_left = -341.0
+offset_top = -123.64
+offset_right = -22.0
+offset_bottom = -9.64001
+theme = ExtResource("10_5nntc")
+text = "BACK TO
+MAIN MENU"
 
 [connection signal="frame_changed" from="TextureRect/AnimatedSprite2D" to="TextureRect/AnimatedSprite2D" method="_on_frame_changed"]

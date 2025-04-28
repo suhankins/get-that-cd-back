@@ -12,7 +12,7 @@ config_version=5
 
 config/name="GET THAT CD BACK"
 config/tags=PackedStringArray("starterkit")
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="uid://cw8md45e34wye"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.92549, 0.92549, 0.960784, 1)
 boot_splash/image="res://splash-screen.png"
@@ -45,6 +45,7 @@ enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg")
 
 player=""
 level_root=""
+game_root=""
 
 [input]
 
