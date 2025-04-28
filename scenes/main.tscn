@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cw8md45e34wye"]
+
+[node name="main" type="Node" groups=["game_root"]]

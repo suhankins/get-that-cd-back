@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://chdaqnwl75n8w"]
+
+[ext_resource type="Script" uid="uid://cfhmq7qbsbi73" path="res://scripts/make_breakable_props_invincible.gd" id="1_dm1l3"]
+
+[node name="MakeBreakablePropsInvincible" type="Node"]
+script = ExtResource("1_dm1l3")
+delay = 22.0

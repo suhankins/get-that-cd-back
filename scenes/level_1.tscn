@@ -1,4 +1,4 @@
-[gd_scene load_steps=1643 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=1644 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" uid="uid://beigiytpsttqg" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_5vesh"]
 [ext_resource type="Script" uid="uid://ovmc3850uj71" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_y1m3s"]
@@ -73,6 +73,7 @@
 [ext_resource type="AudioStream" uid="uid://blfibrnywxr2c" path="res://sounds/cutscenes/villain_not_what_I_asked.mp3" id="71_sy755"]
 [ext_resource type="AudioStream" uid="uid://brbvt7ng1ada1" path="res://sounds/cutscenes/villain_cant_believe_these.mp3" id="72_gh4wy"]
 [ext_resource type="AudioStream" uid="uid://dwh5kh5rvrg85" path="res://sounds/cutscenes/villain_boys_teach_him.mp3" id="73_ensp4"]
+[ext_resource type="PackedScene" uid="uid://chdaqnwl75n8w" path="res://objects/make_breakable_props_invincible.tscn" id="74_y1m3s"]
 
 [sub_resource type="Resource" id="Resource_pibwh"]
 script = ExtResource("2_y1m3s")
@@ -17420,7 +17421,7 @@ collision_mask = 2
 monitoring = false
 monitorable = false
 script = ExtResource("33_wdxu8")
-animation_objects = [NodePath("../KickedDoor"), NodePath("../ScriptableDisablePlayerMovement"), NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2"), NodePath("../DialoguePlayer3"), NodePath("../DialoguePlayer4"), NodePath("../DialoguePlayer5"), NodePath("../CutsceneManager"), NodePath("../TakeCDAway"), NodePath("../ScriptableEnablePlayer")]
+animation_objects = [NodePath("../KickedDoor"), NodePath("../ScriptableDisablePlayerMovement"), NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2"), NodePath("../DialoguePlayer3"), NodePath("../DialoguePlayer4"), NodePath("../DialoguePlayer5"), NodePath("../CutsceneManager"), NodePath("../TakeCDAway"), NodePath("../ScriptableEnablePlayer"), NodePath("../MakeBreakablePropsInvincible")]
 enemies = [NodePath("../EnemyLawyer")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VillainIntroCutscene/CutsceneTrigger"]
@@ -17508,6 +17509,10 @@ delay = 16.6
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.71644, 1.00365, -10.7259)
 delay = 23.0
 hp = 4
+
+[node name="MakeBreakablePropsInvincible" parent="VillainIntroCutscene" node_paths=PackedStringArray("props") instance=ExtResource("74_y1m3s")]
+props = [NodePath("../../TV"), NodePath("../../Keyboard"), NodePath("../../Monitor2")]
+invincible = false
 
 [connection signal="body_entered" from="ScriptedSpawn0/Trigger" to="ScriptedSpawn0/Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="ScriptedSpawn1/Trigger" to="ScriptedSpawn1/Trigger" method="_on_body_entered"]
