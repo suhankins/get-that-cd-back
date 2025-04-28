@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bn68uumtyruqh" path="res://fonts/DejaVuSans-BoldOblique.ttf" id="6_o2gku"]
 [ext_resource type="SpriteFrames" uid="uid://bwhxfctp3dcqk" path="res://objects/explosion_spriteframes.tres" id="6_wj6lj"]
 [ext_resource type="Script" uid="uid://dpeyp6bqa74kg" path="res://scenes/animated_sprite_2d_autoplay.gd" id="7_wj6lj"]
-[ext_resource type="Theme" path="res://themes/main_theme.tres" id="10_5nntc"]
+[ext_resource type="Theme" uid="uid://bkasxqusfeod" path="res://themes/main_theme.tres" id="10_5nntc"]
 [ext_resource type="Script" uid="uid://6ne203iwjv52" path="res://scripts/start_button.gd" id="11_o2gku"]
 
 [node name="EndingScreen" type="Control"]
@@ -113,8 +113,8 @@ text = "[font_size=30px]GAME BY[/font_size]
 [font_size=40px]PUNISHED BERNADETTA[/font_size]
 [font_size=20px]https://detta.dev/[/font_size]
 
-[font_size=30px]VOICE ACTING BY[/font_size]
-[font_size=40px]WHOEVER AGREES[/font_size]
+[font_size=30px]WITH HELP FROM[/font_size]
+[font_size=40px]BLAHAJFISH[/font_size]
 
 [font_size=30px]MADE FOR[/font_size]
 [font_size=40px]DISCMASTER JAM[/font_size]
