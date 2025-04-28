@@ -205,6 +205,7 @@ func enable() -> void:
 	self.enabled = true
 
 func disable() -> void:
+	velocity = Vector3.ZERO
 	self.enabled = false
 
 func damage(amount):
