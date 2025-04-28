@@ -1,4 +1,4 @@
-[gd_scene load_steps=1646 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=1647 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" uid="uid://beigiytpsttqg" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_5vesh"]
 [ext_resource type="Script" uid="uid://ovmc3850uj71" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_y1m3s"]
@@ -73,6 +73,7 @@
 [ext_resource type="AudioStream" uid="uid://blfibrnywxr2c" path="res://sounds/cutscenes/villain_not_what_I_asked.mp3" id="71_sy755"]
 [ext_resource type="AudioStream" uid="uid://brbvt7ng1ada1" path="res://sounds/cutscenes/villain_cant_believe_these.mp3" id="72_gh4wy"]
 [ext_resource type="AudioStream" uid="uid://dwh5kh5rvrg85" path="res://sounds/cutscenes/villain_boys_teach_him.mp3" id="73_ensp4"]
+[ext_resource type="AudioStream" uid="uid://de7cvxpjg8m8r" path="res://sounds/cutscenes/mc_i_gotta_get_my_cd_back.mp3" id="74_uuude"]
 [ext_resource type="PackedScene" uid="uid://chdaqnwl75n8w" path="res://objects/make_breakable_props_invincible.tscn" id="74_y1m3s"]
 [ext_resource type="PackedScene" uid="uid://dcrv6soylfwiw" path="res://objects/level_transition.tscn" id="75_5gq73"]
 
@@ -17425,7 +17426,7 @@ collision_mask = 2
 monitoring = false
 monitorable = false
 script = ExtResource("33_wdxu8")
-animation_objects = [NodePath("../KickedDoor"), NodePath("../ScriptableDisablePlayerMovement"), NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2"), NodePath("../DialoguePlayer3"), NodePath("../DialoguePlayer4"), NodePath("../DialoguePlayer5"), NodePath("../CutsceneManager"), NodePath("../TakeCDAway"), NodePath("../ScriptableEnablePlayer"), NodePath("../MakeBreakablePropsInvincible")]
+animation_objects = [NodePath("../KickedDoor"), NodePath("../ScriptableDisablePlayerMovement"), NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2"), NodePath("../DialoguePlayer3"), NodePath("../DialoguePlayer4"), NodePath("../DialoguePlayer5"), NodePath("../CutsceneManager"), NodePath("../TakeCDAway"), NodePath("../ScriptableEnablePlayer"), NodePath("../MakeBreakablePropsInvincible"), NodePath("../DialoguePlayer6")]
 enemies = [NodePath("../EnemyLawyer")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VillainIntroCutscene/CutsceneTrigger"]
@@ -17548,6 +17549,12 @@ stream = ExtResource("73_ensp4")
 theme = ExtResource("68_6kneo")
 stay_on_screen_for = 0.25
 delay = 16.6
+
+[node name="DialoguePlayer6" parent="VillainIntroCutscene" instance=ExtResource("66_sgffb")]
+text = "I gotta get my CD back!"
+stream = ExtResource("74_uuude")
+theme = ExtResource("70_n8axp")
+delay = 25.0
 
 [node name="EnemyLawyer" parent="VillainIntroCutscene" instance=ExtResource("31_knhdr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.71644, 1.00365, -10.7259)

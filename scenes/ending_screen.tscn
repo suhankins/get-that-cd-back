@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://1kgfsvciufel"]
+[gd_scene load_steps=13 format=3 uid="uid://1kgfsvciufel"]
 
 [ext_resource type="Texture2D" uid="uid://cffab0dvqppnc" path="res://sprites/desktop/background.png" id="1_4313b"]
+[ext_resource type="Script" uid="uid://cabgbuh4gmbmv" path="res://scenes/ending_screen.gd" id="1_aprg5"]
 [ext_resource type="Texture2D" uid="uid://bcliw5dckht4m" path="res://sprites/desktop/bottom_center.png" id="2_qpc4k"]
 [ext_resource type="Texture2D" uid="uid://cm2dvlwkme131" path="res://sprites/desktop/bottom_left.png" id="3_wj6lj"]
 [ext_resource type="Texture2D" uid="uid://b5t3qrjcg358v" path="res://sprites/desktop/bottom_right.png" id="4_nm5sb"]
@@ -10,6 +11,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bwhxfctp3dcqk" path="res://objects/explosion_spriteframes.tres" id="6_wj6lj"]
 [ext_resource type="Script" uid="uid://dpeyp6bqa74kg" path="res://scenes/animated_sprite_2d_autoplay.gd" id="7_wj6lj"]
 [ext_resource type="Theme" path="res://themes/main_theme.tres" id="10_5nntc"]
+[ext_resource type="Script" uid="uid://6ne203iwjv52" path="res://scripts/start_button.gd" id="11_o2gku"]
 
 [node name="EndingScreen" type="Control"]
 layout_mode = 3
@@ -18,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aprg5")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 texture_filter = 1
@@ -115,7 +118,12 @@ text = "[font_size=30px]GAME BY[/font_size]
 
 [font_size=30px]MADE FOR[/font_size]
 [font_size=40px]DISCMASTER JAM[/font_size]
-"
+
+[font_size=30px]GAME USES[/font_size]
+[font_size=20px]Godot[/font_size]
+[font_size=20px]Cyclops Level Builder[/font_size]
+[font_size=20px]Kenney's FPS Template[/font_size]
+[font_size=20px]Way too many assets from Discmaster collection[/font_size]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -133,5 +141,8 @@ offset_bottom = -9.64001
 theme = ExtResource("10_5nntc")
 text = "BACK TO
 MAIN MENU"
+script = ExtResource("11_o2gku")
+level = 0
 
 [connection signal="frame_changed" from="TextureRect/AnimatedSprite2D" to="TextureRect/AnimatedSprite2D" method="_on_frame_changed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -141,6 +141,14 @@ func handle_controls(_delta):
 	
 	# Shooting
 	
+	if Input.is_action_just_pressed("screenshot"):
+		var date = Time.get_date_string_from_system().replace(".","_") 
+		var time :String = Time.get_time_string_from_system().replace(":","")
+		var screenshot_path = "C:\\Users\\suhan\\Desktop\\" + date+ "_" + time + ".jpg" # the path for our screenshot.
+		var image = get_viewport().get_texture().get_image() # We get what our player sees
+	
+		image.save_jpg(screenshot_path)
+	
 	action_shoot()
 
 # Handle gravity
