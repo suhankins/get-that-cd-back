@@ -10,9 +10,48 @@
 [ext_resource type="AudioStream" uid="uid://bygic81qxfjnl" path="res://sounds/Message.mp3" id="7_duqfg"]
 [ext_resource type="AudioStream" uid="uid://dcghdfmaissut" path="res://sounds/keyboard.mp3" id="8_lqxek"]
 
+[sub_resource type="Animation" id="Animation_lqxek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatWindow/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatWindow/FrenIsTyping:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_mc108"]
 resource_name = "play_opening_chat"
-length = 15.0
+length = 13.0
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,7 +96,7 @@ tracks/1/keys = {
 [color=#3d9e2e]<Fren>[/color] aw man, i wish I could play it, but it's not available for sale anymore", "[color=#3d9e2e]<Fren>[/color] hey, have you seen that video about Total Awesomesauce?????
 [color=#ff0000]<You>[/color] hell yeah, that game is fire!
 [color=#3d9e2e]<Fren>[/color] aw man, i wish I could play it, but it's not available for sale anymore
-[color=#ff0000]<You>[/color] i actually have a copy. hold on, i'll send you the files"]
+[color=#ff0000]<You>[/color] i actually have a copy. hold on, let me find it. will send you the game files"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -71,32 +110,17 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true, false, true, false]
 }
-
-[sub_resource type="Animation" id="Animation_lqxek"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChatWindow/RichTextLabel:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [""]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ChatWindow/FrenIsTyping:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_duqfg"]
@@ -225,3 +249,5 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

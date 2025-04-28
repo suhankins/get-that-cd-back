@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf4lit3kxvgik"]
+
+[ext_resource type="Script" uid="uid://bc3ty8oyu6dkp" path="res://scripts/scriptable_disable_player.gd" id="1_gatxm"]
+
+[node name="ScriptableDisablePlayer" type="Node"]
+script = ExtResource("1_gatxm")
+metadata/_custom_type_script = "uid://4gespp8m1giw"

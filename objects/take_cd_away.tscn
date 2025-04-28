@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chrojvqm7yj0j"]
+
+[ext_resource type="Script" uid="uid://bbn72kgfttxtd" path="res://scripts/take_cd_away.gd" id="1_icel8"]
+
+[node name="TakeCDAway" type="Node"]
+script = ExtResource("1_icel8")

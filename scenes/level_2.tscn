@@ -1,4 +1,4 @@
-[gd_scene load_steps=693 format=3 uid="uid://dwaoqxhcdttrq"]
+[gd_scene load_steps=694 format=3 uid="uid://dwaoqxhcdttrq"]
 
 [ext_resource type="Script" uid="uid://beigiytpsttqg" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_b4j7a"]
 [ext_resource type="Script" uid="uid://ovmc3850uj71" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_wo48x"]
@@ -25,11 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://dtobu4t16ibjd" path="res://objects/kicked_door.tscn" id="20_k6a82"]
 [ext_resource type="PackedScene" uid="uid://cx1rkq4x6uoi4" path="res://objects/enemy_lawyer_ranged.tscn" id="20_k22d5"]
 [ext_resource type="Texture2D" uid="uid://bfycunk416768" path="res://sprites/rain.png" id="21_1sb0y"]
-[ext_resource type="AudioStream" uid="uid://cqnnd7wmmb0u3" path="res://sounds/cutscenes/villain_level2_speech.mp3" id="21_7egwj"]
+[ext_resource type="AudioStream" uid="uid://b350p1ysay2s0" path="res://sounds/cutscenes/villain_level2_speech.mp3" id="21_7egwj"]
 [ext_resource type="Script" uid="uid://cndp6bcj161ew" path="res://scenes/scripted_kill_count_trigger.gd" id="21_73m23"]
 [ext_resource type="PackedScene" uid="uid://qbnk4cgci2j" path="res://objects/logo.tscn" id="22_73m23"]
 [ext_resource type="Theme" uid="uid://bqeui4c6t5e7c" path="res://themes/villain_dialogue.tres" id="22_nquw4"]
 [ext_resource type="Script" uid="uid://btihk323vpd3h" path="res://scripts/animated_sprite_3d_autoplay.gd" id="22_vhnap"]
+[ext_resource type="AudioStream" uid="uid://cvc7g1o8cacf3" path="res://sounds/shutdown.mp3" id="23_nquw4"]
 [ext_resource type="AudioStream" uid="uid://xeyfs726grsj" path="res://sounds/rain.mp3" id="23_vhnap"]
 [ext_resource type="PackedScene" uid="uid://dwmwt6ualv3mh" path="res://objects/elevator_button_off.tscn" id="24_vwfin"]
 
@@ -6895,123 +6896,131 @@ materials = Array[Material]([ExtResource("8_fldb1"), ExtResource("6_172wr")])
 
 [node name="EnemyLawyer" parent="ScriptedSpawn0" instance=ExtResource("19_bv48q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.464092, 1.00365, -17.5284)
-delay = 6.0
+delay = 15.0
 walk_for_seconds = 1.5
 detection_radius = 1000.0
 
 [node name="EnemyLawyer4" parent="ScriptedSpawn0" instance=ExtResource("19_bv48q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.5657, 1.00365, -17.5131)
-delay = 6.0
+delay = 15.0
 walk_for_seconds = 1.5
 detection_radius = 1000.0
 
 [node name="EnemyLawyer5" parent="ScriptedSpawn0" instance=ExtResource("19_bv48q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.5657, 1.00365, -13.706)
-delay = 6.0
+delay = 15.0
 seen_player = true
 walk_for_seconds = 1.5
 detection_radius = 1000.0
 
 [node name="EnemyLawyer2" parent="ScriptedSpawn0" instance=ExtResource("19_bv48q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.464092, 1.00365, -13.7227)
-delay = 6.0
+delay = 15.0
 seen_player = true
 walk_for_seconds = 1.5
 detection_radius = 1000.0
 
 [node name="EnemyLawyerRanged" parent="ScriptedSpawn0" instance=ExtResource("20_k22d5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.304968, 1.00365, -5.79988)
-delay = 6.0
+delay = 15.0
 seen_player = true
 walk_for_seconds = 1.52
 detection_radius = 1000.0
 
 [node name="EnemyLawyerRanged2" parent="ScriptedSpawn0" instance=ExtResource("20_k22d5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 12.6389, 1.00365, -5.70053)
-delay = 6.0
+delay = 15.0
 seen_player = true
 walk_for_seconds = 1.51
 detection_radius = 1000.0
 
 [node name="EnemyLawyerRanged3" parent="ScriptedSpawn0" instance=ExtResource("20_k22d5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.304968, 1.00365, -9.78839)
-delay = 6.0
+delay = 15.0
 seen_player = true
 walk_for_seconds = 1.5
 detection_radius = 1000.0
 
 [node name="EnemyLawyerRanged4" parent="ScriptedSpawn0" instance=ExtResource("20_k22d5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 12.6389, 1.00365, -9.68904)
-delay = 6.0
+delay = 15.0
 seen_player = true
 walk_for_seconds = 1.55
 detection_radius = 1000.0
 
 [node name="KickedDoor" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.00878, -6.17148)
-delay = 3.0
+delay = 14.0
 
 [node name="KickedDoor5" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 1.00878, -5.22843)
-delay = 3.0
+delay = 14.0
 
 [node name="KickedDoor6" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 1.00878, -9.22843)
-delay = 4.0
+delay = 14.0
 
 [node name="KickedDoor7" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 1.00878, -13.2284)
-delay = 5.0
+delay = 14.0
 
 [node name="KickedDoor8" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 1.00878, -17.028)
-delay = 5.0
+delay = 14.0
 
 [node name="KickedDoor2" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.00878, -10.1715)
-delay = 4.0
+delay = 14.0
 
 [node name="KickedDoor3" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.00878, -14.1715)
-delay = 5.0
+delay = 14.0
 
 [node name="KickedDoor4" parent="ScriptedSpawn0" instance=ExtResource("20_k6a82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.00878, -17.9835)
-delay = 5.0
+delay = 14.0
 
 [node name="ElevatorButtonOff" parent="ScriptedSpawn0" instance=ExtResource("24_vwfin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62442, 1.99002, -23.9957)
 
 [node name="LobbyLightTurnOff1" parent="ScriptedSpawn0" instance=ExtResource("16_vwfin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46915, 16.9744, -4.06719)
+delay = 1.0
 
 [node name="LobbyLightTurnOff2" parent="ScriptedSpawn0" instance=ExtResource("16_vwfin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46915, 16.9744, -11.0672)
+delay = 1.0
 
 [node name="LobbyLightTurnOff3" parent="ScriptedSpawn0" instance=ExtResource("16_vwfin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46915, 16.9744, -18.0672)
+delay = 1.0
 
 [node name="LobbyLightTurnOn1" parent="ScriptedSpawn0" instance=ExtResource("16_63d2t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46915, 16.9744, -4.06719)
-delay = 3.0
+delay = 12.0
 
 [node name="LobbyLightTurnOn2" parent="ScriptedSpawn0" instance=ExtResource("16_63d2t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46915, 16.9744, -11.0672)
-delay = 4.0
+delay = 13.0
 
 [node name="LobbyLightTurnOn3" parent="ScriptedSpawn0" instance=ExtResource("16_63d2t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46915, 16.9744, -18.0672)
-delay = 5.0
+delay = 14.0
 
 [node name="ScriptedSpawnsTrigger" type="Node" parent="ScriptedSpawn0" node_paths=PackedStringArray("animation_objects", "enemies")]
 script = ExtResource("18_va6c3")
-animation_objects = [NodePath("../LobbyLightTurnOff1"), NodePath("../LobbyLightTurnOff2"), NodePath("../LobbyLightTurnOff3"), NodePath("../LobbyLightTurnOn1"), NodePath("../LobbyLightTurnOn2"), NodePath("../LobbyLightTurnOn3"), NodePath("../KickedDoor"), NodePath("../KickedDoor5"), NodePath("../KickedDoor6"), NodePath("../KickedDoor7"), NodePath("../KickedDoor8"), NodePath("../KickedDoor2"), NodePath("../KickedDoor3"), NodePath("../KickedDoor4"), NodePath("../DialoguePlayer")]
+animation_objects = [NodePath("../LobbyLightTurnOff1"), NodePath("../LobbyLightTurnOff2"), NodePath("../LobbyLightTurnOff3"), NodePath("../LobbyLightTurnOn1"), NodePath("../LobbyLightTurnOn2"), NodePath("../LobbyLightTurnOn3"), NodePath("../KickedDoor"), NodePath("../KickedDoor5"), NodePath("../KickedDoor6"), NodePath("../KickedDoor7"), NodePath("../KickedDoor8"), NodePath("../KickedDoor2"), NodePath("../KickedDoor3"), NodePath("../KickedDoor4"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2")]
 enemies = [NodePath("../EnemyLawyer"), NodePath("../EnemyLawyer4"), NodePath("../EnemyLawyer5"), NodePath("../EnemyLawyerRanged3"), NodePath("../EnemyLawyer2"), NodePath("../EnemyLawyerRanged4"), NodePath("../EnemyLawyerRanged"), NodePath("../EnemyLawyerRanged2")]
 
 [node name="DialoguePlayer" parent="ScriptedSpawn0" instance=ExtResource("20_45kkt")]
 text = "I expected better judgement from you. Thought you'd have the sense not to follow me here. Well, seems I overestimated you."
 stream = ExtResource("21_7egwj")
 theme = ExtResource("22_nquw4")
+delay = 3.0
+
+[node name="DialoguePlayer2" parent="ScriptedSpawn0" instance=ExtResource("20_45kkt")]
+stream = ExtResource("23_nquw4")
+stay_on_screen_for = 0.0
 delay = 1.0
 
 [node name="ElevatorScripting" type="Node" parent="."]

@@ -5,6 +5,7 @@ class_name ScriptedSpawnsTrigger extends Node
 
 
 func start():
+	print("Scripted event triggered")
 	assert(animation_objects.size() > 0 or enemies.size() > 0, "No enemies or animated objects set")
 	for animation_object in animation_objects:
 		animation_object.play_animation()

@@ -203,10 +203,15 @@ func action_shoot():
 
 func enable() -> void:
 	self.enabled = true
+	self.camera.current = true
+	can_attack = true
+	for fist in fists:
+		fist.show()
 
 func disable() -> void:
 	velocity = Vector3.ZERO
 	self.enabled = false
+	self.camera.current = false
 
 func damage(amount):
 	health -= amount

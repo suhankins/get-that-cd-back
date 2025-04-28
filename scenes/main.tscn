@@ -1,4 +1,4 @@
-[gd_scene load_steps=1623 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=1643 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
@@ -57,6 +57,22 @@
 [ext_resource type="PackedScene" uid="uid://bih7otjojyuey" path="res://objects/opening_door.tscn" id="52_bu4jf"]
 [ext_resource type="Texture2D" uid="uid://vdd534ex3enf" path="res://sprites/exit_sign.png" id="55_ids8r"]
 [ext_resource type="PackedScene" uid="uid://bgcxkpk3hsit7" path="res://objects/total_awesomesauce_cd.tscn" id="56_dnhof"]
+[ext_resource type="PackedScene" uid="uid://bhiuwymcgssv0" path="res://scenes/opening_cutscene_desktop.tscn" id="58_augu2"]
+[ext_resource type="PackedScene" uid="uid://cb2iqq04iodw" path="res://objects/dialogue_player.tscn" id="59_od4ux"]
+[ext_resource type="PackedScene" uid="uid://cf4lit3kxvgik" path="res://objects/scriptable_disable_player.tscn" id="59_tm6hj"]
+[ext_resource type="Script" uid="uid://4gespp8m1giw" path="res://scripts/animation_object.gd" id="60_kf5aa"]
+[ext_resource type="AudioStream" uid="uid://bqybqnwxu3wh6" path="res://sounds/cutscenes/villain_do_you_have_license.mp3" id="60_xhfw6"]
+[ext_resource type="Theme" uid="uid://bqeui4c6t5e7c" path="res://themes/villain_dialogue.tres" id="61_1epgm"]
+[ext_resource type="PackedScene" uid="uid://bagk1is8oydy" path="res://objects/lawyer.tscn" id="61_t5ykj"]
+[ext_resource type="AudioStream" uid="uid://xpalqoptpk54" path="res://sounds/cutscenes/mc_im_just_sharing_it.mp3" id="62_1epgm"]
+[ext_resource type="Theme" uid="uid://dn2pmtviyreha" path="res://themes/player_dialogue.tres" id="63_152kg"]
+[ext_resource type="AudioStream" uid="uid://blfibrnywxr2c" path="res://sounds/cutscenes/villain_not_what_I_asked.mp3" id="64_r4e17"]
+[ext_resource type="AudioStream" uid="uid://brbvt7ng1ada1" path="res://sounds/cutscenes/villain_cant_believe_these.mp3" id="65_y57op"]
+[ext_resource type="AudioStream" uid="uid://dwh5kh5rvrg85" path="res://sounds/cutscenes/villain_boys_teach_him.mp3" id="66_y57op"]
+[ext_resource type="PackedScene" uid="uid://m4jiquerseyn" path="res://objects/scriptable_enable_player.tscn" id="67_gdvew"]
+[ext_resource type="Texture2D" uid="uid://b8j751dh7mh5r" path="res://sprites/total_awesomesauce_cd.png" id="70_mlv25"]
+[ext_resource type="PackedScene" uid="uid://chrojvqm7yj0j" path="res://objects/take_cd_away.tscn" id="71_a82wo"]
+[ext_resource type="Material" uid="uid://mn27mkkwj3je" path="res://models/Textures/ceo_suit.tres" id="71_kjtvk"]
 
 [sub_resource type="Resource" id="Resource_pibwh"]
 script = ExtResource("5_85g3d")
@@ -15921,6 +15937,166 @@ face_vertex_data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_pibwh"]
 size = Vector3(1, 2.55518, 3.03217)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_augu2"]
+
+[sub_resource type="Animation" id="Animation_t5ykj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.98802, 2.25361, -5.09694)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.427187, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kf5aa"]
+resource_name = "opening_cutscene"
+length = 22.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 22.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8.8, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-6.98802, 2.25361, -5.09694), Vector3(-6.98802, 2.25361, -5.09694), Vector3(-6.98802, 1.27124, -5.09694)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8.8, 9.59477, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.427187, 0), Vector3(0, 0.427187, 0), Vector3(-0.467225, 0.542758, -0.0495989), Vector3(-0.578577, 0.464977, -0.17487)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.8, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 15, 18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 15, 22.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5ykj"]
+_data = {
+&"RESET": SubResource("Animation_t5ykj"),
+&"opening_cutscene": SubResource("Animation_kf5aa")
+}
+
 [node name="Main" type="Node3D" groups=["level_root"]]
 
 [node name="Architexture" type="Node" parent="."]
@@ -16843,15 +17019,13 @@ debug_color = Color(0.583942, 0.406454, 0.943752, 0.42)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_q8fpv")
 
-[node name="Player" parent="." instance=ExtResource("2_elriq")]
-transform = Transform3D(-0.0817646, 0, 0.996652, 0, 1, 0, -0.996652, 0, -0.0817646, -7.35576, 0.985196, -4.70785)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.88425, 0.340826, -0.319282, -0.154788, 0.858908, 0.488179, 0.440617, -0.382251, 0.812244, -9.08372, 4.03931, 0)
 shadow_enabled = true
 
 [node name="Keyboard" parent="." instance=ExtResource("10_ids8r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.18841, 1.8766, -4.67725)
+invincible = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02129, 3.24573, -5.05741)
@@ -17046,6 +17220,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.8818
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77834, 2.27911, -4.67062)
 monitoring = false
 monitorable = false
+invincible = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Monitor2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.07961, 0, -1, 0, -4.37114e-08, 0.345568, -0.127012, -0.00396681)
@@ -17221,12 +17396,124 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0352203, 1.1452, -26.3978)
 [node name="CokeCan7" parent="." instance=ExtResource("48_bjg73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299528, 1.1452, -26.4977)
 
-[node name="KickedDoor" parent="." instance=ExtResource("38_pibwh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.19732, 1, -9.47171)
-
 [node name="TotalAwesomesauceCD" parent="." instance=ExtResource("56_dnhof")]
 transform = Transform3D(-0.587093, 0, -0.809519, 0, 1, 0, 0.809519, 0, -0.587093, -4.89919, 1.39951, -6.06293)
+
+[node name="Player" parent="." instance=ExtResource("2_elriq")]
+transform = Transform3D(-0.0817646, 0, 0.996652, 0, 1, 0, -0.996652, 0, -0.0817646, -7.35576, 0.985196, -4.70785)
+enabled = false
+
+[node name="OpeningCutsceneDesktop" parent="." instance=ExtResource("58_augu2")]
+
+[node name="VillainIntroCutscene" type="Node" parent="."]
+
+[node name="KickedDoor" parent="VillainIntroCutscene" instance=ExtResource("38_pibwh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.19732, 1.00681, -9.47171)
+
+[node name="ScriptableEnablePlayer" parent="VillainIntroCutscene" instance=ExtResource("67_gdvew")]
+delay = 21.2
+
+[node name="CutsceneTrigger" type="Area3D" parent="VillainIntroCutscene" node_paths=PackedStringArray("animation_objects", "enemies")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.36347, 1.33082, -3.79698)
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+script = ExtResource("39_c6pm6")
+animation_objects = [NodePath("../KickedDoor"), NodePath("../ScriptableDisablePlayerMovement"), NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2"), NodePath("../DialoguePlayer3"), NodePath("../DialoguePlayer4"), NodePath("../DialoguePlayer5"), NodePath("../CutsceneManager"), NodePath("../TakeCDAway"), NodePath("../ScriptableEnablePlayer")]
+enemies = [NodePath("../EnemyLawyer")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VillainIntroCutscene/CutsceneTrigger"]
+shape = SubResource("BoxShape3D_augu2")
+
+[node name="ScriptableDisablePlayerMovement" parent="VillainIntroCutscene" instance=ExtResource("59_tm6hj")]
+
+[node name="Lawyer" parent="VillainIntroCutscene" instance=ExtResource("61_t5ykj")]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.70232, 1.24912, -9.95122)
+script = ExtResource("60_kf5aa")
+animation_name = &"ceo_opening_cutscene"
+delay = 1.0
+
+[node name="in" parent="VillainIntroCutscene/Lawyer/in_skeleton/Skeleton3D" index="0"]
+surface_material_override/1 = ExtResource("71_kjtvk")
+
+[node name="CutsceneManager" type="Node3D" parent="VillainIntroCutscene"]
+script = ExtResource("60_kf5aa")
+animation_name = &"opening_cutscene"
+
+[node name="Sprite3D" type="Sprite3D" parent="VillainIntroCutscene/CutsceneManager"]
+transform = Transform3D(0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, -0.866025, -3.78552e-08, -7.35026, 1.0046, -6.17447)
+visible = false
+pixel_size = 0.0015
+texture = ExtResource("70_mlv25")
+
+[node name="Camera3D" type="Camera3D" parent="VillainIntroCutscene/CutsceneManager"]
+transform = Transform3D(0.910135, 0, 0.414312, 0, 1, 0, -0.414312, 0, 0.910135, -6.98802, 2.25361, -5.09694)
+current = true
+fov = 80.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VillainIntroCutscene/CutsceneManager"]
+libraries = {
+&"": SubResource("AnimationLibrary_t5ykj")
+}
+
+[node name="ColorRect" type="ColorRect" parent="VillainIntroCutscene/CutsceneManager"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TakeCDAway" parent="VillainIntroCutscene" instance=ExtResource("71_a82wo")]
+delay = 8.8
+
+[node name="DialoguePlayer" parent="VillainIntroCutscene" instance=ExtResource("59_od4ux")]
+text = "Do you have a license to share that CD?"
+stream = ExtResource("60_xhfw6")
+theme = ExtResource("61_1epgm")
+stay_on_screen_for = 0.0
+delay = 2.5
+
+[node name="DialoguePlayer2" parent="VillainIntroCutscene" instance=ExtResource("59_od4ux")]
+text = "Hey, man, I'm just sharing it with a friend. Game isn't even for sale anymore-"
+stream = ExtResource("62_1epgm")
+theme = ExtResource("63_152kg")
+stay_on_screen_for = 0.25
+delay = 5.6
+
+[node name="DialoguePlayer3" parent="VillainIntroCutscene" instance=ExtResource("59_od4ux")]
+text = "That's not what I asked."
+stream = ExtResource("64_r4e17")
+theme = ExtResource("61_1epgm")
+stay_on_screen_for = 0.25
+delay = 10.0
+
+[node name="DialoguePlayer4" parent="VillainIntroCutscene" instance=ExtResource("59_od4ux")]
+text = "Can't believe these foul things are still out there."
+stream = ExtResource("65_y57op")
+theme = ExtResource("61_1epgm")
+stay_on_screen_for = 0.25
+delay = 14.0
+
+[node name="DialoguePlayer5" parent="VillainIntroCutscene" instance=ExtResource("59_od4ux")]
+text = "Boys, teach him a lesson."
+stream = ExtResource("66_y57op")
+theme = ExtResource("61_1epgm")
+stay_on_screen_for = 0.25
+delay = 16.6
+
+[node name="EnemyLawyer" parent="VillainIntroCutscene" instance=ExtResource("25_og1vs")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.71644, 1.00365, -10.7259)
+delay = 23.0
+hp = 4
 
 [connection signal="body_entered" from="ScriptedSpawn0/Trigger" to="ScriptedSpawn0/Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="ScriptedSpawn1/Trigger" to="ScriptedSpawn1/Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="ScriptedSpawn2/Trigger" to="ScriptedSpawn2/Trigger" method="_on_body_entered"]
+[connection signal="broke" from="TotalAwesomesauceCD" to="VillainIntroCutscene/CutsceneTrigger" method="set_monitoring" binds= [true]]
+[connection signal="animation_finished" from="OpeningCutsceneDesktop" to="Player" method="enable"]
+[connection signal="body_entered" from="VillainIntroCutscene/CutsceneTrigger" to="VillainIntroCutscene/CutsceneTrigger" method="_on_body_entered"]
+
+[editable path="VillainIntroCutscene/Lawyer"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://m4jiquerseyn"]
+
+[ext_resource type="Script" uid="uid://cnotvi0acqjtg" path="res://objects/scriptable_enable_player.gd" id="1_i7iar"]
+
+[node name="ScriptableEnablePlayer" type="Node"]
+script = ExtResource("1_i7iar")

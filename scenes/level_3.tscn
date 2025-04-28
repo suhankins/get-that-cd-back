@@ -46,9 +46,9 @@
 [ext_resource type="PackedScene" uid="uid://bb8pmrrodfde0" path="res://models/b1_skyscraper.glb" id="43_1x8o1"]
 [ext_resource type="PackedScene" uid="uid://cb2iqq04iodw" path="res://objects/dialogue_player.tscn" id="45_7mmqb"]
 [ext_resource type="PackedScene" uid="uid://bgcxkpk3hsit7" path="res://objects/total_awesomesauce_cd.tscn" id="45_hs0n0"]
-[ext_resource type="AudioStream" uid="uid://dx6ctl6iul5ub" path="res://sounds/cutscenes/villain_license_key.mp3" id="46_sf7oq"]
+[ext_resource type="AudioStream" uid="uid://dx6ctl6iul5ub" path="res://sounds/cutscenes/villain_license_key.mp3" id="46_kmaj6"]
 [ext_resource type="Theme" uid="uid://bqeui4c6t5e7c" path="res://themes/villain_dialogue.tres" id="47_kmaj6"]
-[ext_resource type="AudioStream" uid="uid://bn8g5grx7w7ww" path="res://sounds/cutscenes/villain_take_your_cd.mp3" id="48_sf7oq"]
+[ext_resource type="AudioStream" uid="uid://bn8g5grx7w7ww" path="res://sounds/cutscenes/villain_take_your_cd.mp3" id="48_12f7l"]
 [ext_resource type="AudioStream" uid="uid://d7rjelwm2480" path="res://sounds/cutscenes/mc_i_hope_ill_never_see_you_again.mp3" id="50_12f7l"]
 [ext_resource type="Theme" uid="uid://dn2pmtviyreha" path="res://themes/player_dialogue.tres" id="51_76odh"]
 
@@ -7575,13 +7575,13 @@ animation_objects = [NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodeP
 
 [node name="DialoguePlayer" parent="ScriptedSceneFinal" instance=ExtResource("45_7mmqb")]
 text = "Wait, no, you don't have a license key!"
-stream = ExtResource("46_sf7oq")
+stream = ExtResource("46_kmaj6")
 theme = ExtResource("47_kmaj6")
 delay = 0.5
 
 [node name="DialoguePlayer2" parent="ScriptedSceneFinal" instance=ExtResource("45_7mmqb")]
 text = "Please just take your CD and leave"
-stream = ExtResource("48_sf7oq")
+stream = ExtResource("48_12f7l")
 theme = ExtResource("47_kmaj6")
 delay = 5.0
 
