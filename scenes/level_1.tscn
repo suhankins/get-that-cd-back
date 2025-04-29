@@ -17031,7 +17031,6 @@ shadow_enabled = true
 
 [node name="Keyboard" parent="." instance=ExtResource("38_pjtvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.18841, 1.8766, -4.67725)
-invincible = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02129, 3.24573, -5.05741)
@@ -17226,7 +17225,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.8818
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77834, 2.27911, -4.67062)
 monitoring = false
 monitorable = false
-invincible = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Monitor2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.07961, 0, -1, 0, -4.37114e-08, 0.345568, -0.127012, -0.00396681)
@@ -17402,16 +17400,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0352203, 1.1452, -26.3978)
 [node name="CokeCan7" parent="." instance=ExtResource("52_sa842")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299528, 1.1452, -26.4977)
 
-[node name="TotalAwesomesauceCD" parent="." instance=ExtResource("56_y65gy")]
-transform = Transform3D(-0.587093, 0, -0.809519, 0, 1, 0, 0.809519, 0, -0.587093, -4.89919, 1.39951, -6.06293)
-
 [node name="Player" parent="." instance=ExtResource("57_jy80b")]
 transform = Transform3D(-0.0817646, 0, 0.996652, 0, 1, 0, -0.996652, 0, -0.0817646, -7.41926, 0.985196, -4.63106)
-enabled = false
 
-[node name="OpeningCutsceneDesktop" parent="." instance=ExtResource("58_x00f4")]
+[node name="EnemyLawyer" parent="." instance=ExtResource("31_knhdr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.71644, 1.00365, -10.7259)
+delay = 23.0
+hp = 4
 
-[node name="VillainIntroCutscene" type="Node" parent="."]
+[node name="VillainIntroCutscene" type="Node" parent="." groups=["delete_on_restart"]]
 
 [node name="KickedDoor" parent="VillainIntroCutscene" instance=ExtResource("32_q4oq8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.19732, 1.00681, -9.47171)
@@ -17427,7 +17424,7 @@ monitoring = false
 monitorable = false
 script = ExtResource("33_wdxu8")
 animation_objects = [NodePath("../KickedDoor"), NodePath("../ScriptableDisablePlayerMovement"), NodePath("../Lawyer"), NodePath("../DialoguePlayer"), NodePath("../DialoguePlayer2"), NodePath("../DialoguePlayer3"), NodePath("../DialoguePlayer4"), NodePath("../DialoguePlayer5"), NodePath("../CutsceneManager"), NodePath("../TakeCDAway"), NodePath("../ScriptableEnablePlayer"), NodePath("../MakeBreakablePropsInvincible"), NodePath("../DialoguePlayer6")]
-enemies = [NodePath("../EnemyLawyer")]
+enemies = [NodePath("../../EnemyLawyer")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VillainIntroCutscene/CutsceneTrigger"]
 shape = SubResource("BoxShape3D_augu2")
@@ -17478,10 +17475,10 @@ bones/35/rotation = Quaternion(5.98099e-08, -1.26991e-06, 0.0827802, 0.996568)
 surface_material_override/1 = ExtResource("63_ld3li")
 
 [node name="LegalPaper" parent="VillainIntroCutscene/Lawyer/in_skeleton/Skeleton3D" index="1"]
-transform = Transform3D(-0.183981, 0.982494, 0.0292753, -0.970994, -0.186294, 0.149882, 0.152712, -0.000850609, 0.98827, -0.196004, 0.648077, -0.0380257)
+transform = Transform3D(-0.183981, 0.982494, 0.0292754, -0.970994, -0.186294, 0.149882, 0.152712, -0.000850781, 0.98827, -0.196004, 0.648077, -0.0380257)
 
 [node name="CD" parent="VillainIntroCutscene/Lawyer/in_skeleton/Skeleton3D" index="2"]
-transform = Transform3D(-0.183981, 0.982494, 0.0292753, -0.970994, -0.186294, 0.149882, 0.152712, -0.000850609, 0.98827, -0.196004, 0.648077, -0.0380257)
+transform = Transform3D(-0.183981, 0.982494, 0.0292754, -0.970994, -0.186294, 0.149882, 0.152712, -0.000850781, 0.98827, -0.196004, 0.648077, -0.0380257)
 
 [node name="CutsceneManager" type="Node3D" parent="VillainIntroCutscene"]
 script = ExtResource("62_sbi56")
@@ -17556,14 +17553,23 @@ stream = ExtResource("74_uuude")
 theme = ExtResource("70_n8axp")
 delay = 25.0
 
-[node name="EnemyLawyer" parent="VillainIntroCutscene" instance=ExtResource("31_knhdr")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.71644, 1.00365, -10.7259)
-delay = 23.0
-hp = 4
+[node name="MakeBreakablePropsInvincible2" parent="VillainIntroCutscene" node_paths=PackedStringArray("props") instance=ExtResource("74_y1m3s")]
+props = [NodePath("../../TV"), NodePath("../../Keyboard"), NodePath("../../Monitor2")]
+play_on_ready = true
+delay = 0.1
 
 [node name="MakeBreakablePropsInvincible" parent="VillainIntroCutscene" node_paths=PackedStringArray("props") instance=ExtResource("74_y1m3s")]
 props = [NodePath("../../TV"), NodePath("../../Keyboard"), NodePath("../../Monitor2")]
 invincible = false
+
+[node name="TotalAwesomesauceCD" parent="VillainIntroCutscene" instance=ExtResource("56_y65gy")]
+transform = Transform3D(-0.587093, 0, -0.809519, 0, 1, 0, 0.809519, 0, -0.587093, -4.89919, 1.39951, -6.06293)
+
+[node name="OpeningCutsceneDesktop" parent="VillainIntroCutscene" instance=ExtResource("58_x00f4")]
+
+[node name="ScriptableDisablePlayerMovement2" parent="VillainIntroCutscene" instance=ExtResource("60_5k42d")]
+play_on_ready = true
+delay = 0.1
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99036, 1.57988, -28.9836)
@@ -17579,9 +17585,9 @@ shape = SubResource("BoxShape3D_5gq73")
 [connection signal="body_entered" from="ScriptedSpawn0/Trigger" to="ScriptedSpawn0/Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="ScriptedSpawn1/Trigger" to="ScriptedSpawn1/Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="ScriptedSpawn2/Trigger" to="ScriptedSpawn2/Trigger" method="_on_body_entered"]
-[connection signal="broke" from="TotalAwesomesauceCD" to="VillainIntroCutscene/CutsceneTrigger" method="set_monitoring" binds= [true]]
-[connection signal="animation_finished" from="OpeningCutsceneDesktop" to="Player" method="enable"]
 [connection signal="body_entered" from="VillainIntroCutscene/CutsceneTrigger" to="VillainIntroCutscene/CutsceneTrigger" method="_on_body_entered"]
+[connection signal="broke" from="VillainIntroCutscene/TotalAwesomesauceCD" to="VillainIntroCutscene/CutsceneTrigger" method="set_monitoring" binds= [true]]
+[connection signal="animation_finished" from="VillainIntroCutscene/OpeningCutsceneDesktop" to="Player" method="enable"]
 [connection signal="body_entered" from="Area3D" to="LevelTransition" method="switch_level_with_one_argument"]
 
 [editable path="VillainIntroCutscene/Lawyer"]

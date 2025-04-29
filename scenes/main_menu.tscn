@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://dlmuqj6jtu5il" path="res://scripts/spin.gd" id="15_7b55j"]
 [ext_resource type="FontFile" uid="uid://bn68uumtyruqh" path="res://fonts/DejaVuSans-BoldOblique.ttf" id="16_5pajh"]
 [ext_resource type="Script" uid="uid://6ne203iwjv52" path="res://scripts/start_button.gd" id="17_a8gd2"]
-[ext_resource type="Theme" path="res://themes/main_theme.tres" id="17_hstxw"]
+[ext_resource type="Theme" uid="uid://bkasxqusfeod" path="res://themes/main_theme.tres" id="17_hstxw"]
 [ext_resource type="Script" uid="uid://d1dsfu4orqc6t" path="res://scripts/exit_button.gd" id="17_j7ex8"]
 [ext_resource type="AudioStream" uid="uid://cicim0a5xkiip" path="res://sounds/Main Menu Theme.mp3" id="20_8egab"]
 

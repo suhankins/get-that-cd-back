@@ -46,6 +46,7 @@ enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg")
 player=""
 level_root=""
 game_root=""
+delete_on_restart=""
 
 [input]
 
