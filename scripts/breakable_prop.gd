@@ -1,4 +1,4 @@
-class_name BreakableProp extends Area3D
+class_name BreakableProp extends CollisionObject3D
 
 @export var hp: int = 4
 @export var invincible: bool = false

@@ -7001,8 +7001,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.578
 
 [node name="Monitor" parent="." instance=ExtResource("14_ema3p")]
 transform = Transform3D(0.673993, 0, -0.738738, 0, 1, 0, 0.738738, 0, 0.673993, 5.00497, 2.32913, -18.762)
-monitoring = false
-monitorable = false
 
 [node name="Office Chair" parent="." instance=ExtResource("10_p3r0x")]
 transform = Transform3D(-0.900121, 0, 0.43564, 0, 1, 0, -0.43564, 0, -0.900121, 5.83053, 1.456, -17.5911)

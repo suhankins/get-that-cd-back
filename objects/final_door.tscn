@@ -36,9 +36,7 @@ shadow_mesh = SubResource("ArrayMesh_7rkg3")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_usn2o"]
 points = PackedVector3Array(0.25, 2, 1.5, 0, 2, 1.5, 0.25, 0, 1.5, 0.25, 2, 0, 0, 2, 0, 0, 0, 1.5, 0.25, 0, 0, 0, 0, 0)
 
-[node name="FinalDoor" type="Area3D"]
-monitoring = false
-monitorable = false
+[node name="FinalDoor" type="StaticBody3D"]
 script = ExtResource("1_wl7h5")
 hp = 1
 explosion_scene = ExtResource("2_usn2o")
@@ -47,13 +45,6 @@ metadata/_edit_group_ = true
 [node name="Block_49_mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01035, -0.707778)
 mesh = SubResource("ArrayMesh_jh31s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0486636, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01035, -0.707778)
-shape = SubResource("ConvexPolygonShape3D_usn2o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01035, -0.707778)

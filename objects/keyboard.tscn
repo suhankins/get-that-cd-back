@@ -56,9 +56,7 @@ shadow_mesh = SubResource("ArrayMesh_cp331")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jr7vf"]
 points = PackedVector3Array(0.3, 0, 0.8, 0, 0, 0.8, 0.3, 0, 0, 0, 0.1, 0.8, 0, 0, 0, 0, 0.1, 0)
 
-[node name="converted_blocks0" type="Area3D"]
-monitoring = false
-monitorable = false
+[node name="converted_blocks0" type="StaticBody3D"]
 script = ExtResource("1_jr7vf")
 hp = 2
 explosion_scene = ExtResource("2_xjtqc")

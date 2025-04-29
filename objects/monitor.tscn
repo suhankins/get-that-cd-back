@@ -129,7 +129,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w35sf")
 
-[node name="Monitor" type="Area3D"]
+[node name="Monitor" type="StaticBody3D"]
 script = ExtResource("1_nfo7x")
 explosion_scene = ExtResource("2_jnh37")
 
