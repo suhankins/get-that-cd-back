@@ -1,6 +1,6 @@
 MIT License
 
-Godot FPS Template: Copyright (c) 2023 Kenney
+Starter Kit FPS: Copyright (c) 2023 Kenney
 GET THAT CD BACK game: Copyright (c) 2025 Dimitri Sukhankin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
