@@ -2,7 +2,7 @@
 
 **In the year 20XX corporations think they own everything, and now they came for your old CDs. It's time for fists-on approach to media preservation.**
 
-First person brawler made entirely with DiscMaster assets for DiscMaster Jam. Made in 1 week.
+First person brawler made entirely with DiscMaster assets for DiscMaster Jam. Made in 9 days.
 
 ![](screenshots/2025-04-29_021756.jpg) ![](screenshots/2025-04-29_021805.jpg)
 
